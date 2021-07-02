@@ -8,6 +8,8 @@ if(!$_SESSION['username'])
     window.location.href="login-register.php";
     </script>';
 }
+
+
 include('includes/header.php');?>
 
     <!-- Main Wrapper Start -->

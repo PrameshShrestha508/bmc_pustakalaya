@@ -350,6 +350,10 @@ include('includes/header.php');
                                                                 title="Add to Cart">
                                                                 <i class="dl-icon-cart29"></i>
                                                             </a>
+                                                            <a class="action-btn" href="checkout-direct.php?itemno=<?php echo $row['new_id'];?>"
+                                                                data-toggle="tooltip" data-placement="top" title="Order Now">
+                                                                <i class="fa fa-money"></i>
+                                                            </a>
                                                             <!-- <a class="add_wishlist action-btn" href="wishlist.php"
                                                                 data-toggle="tooltip" data-placement="top"
                                                                 title="Add to Wishlist">

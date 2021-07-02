@@ -64,6 +64,8 @@ include('includes/header.php');
                                     <div class="form__group mb--20">
                                         <label class="form__label form__label--2" for="username">UserName  <span
                                                 class="required">*</span></label>
+                                        <input type="hidden" class="form__input form__input--3" id="service" name="service" value="REG">
+                                        <input type="hidden" class="form__input form__input--3" id="usertype" name="usertype" value="USER">
                                         <input type="text" class="form__input form__input--3" id="uname" name="uname">
                                     </div>
                                     <div class="form__group mb--20">

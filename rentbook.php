@@ -114,7 +114,7 @@ include('includes/header.php');?>
                                                             <i class="dl-icon-view"></i>
                                                         </a>
                                                             
-                                                            <a class="action-btn" href="rentbook-checkout.php?itemno=<?php echo $row['rent_id'];?>"
+                                                            <a class="action-btn" href="rentmembership.php?itemno=<?php echo $row['rent_id'];?>"
                                                                 data-toggle="tooltip" data-placement="top" title="Rent Book Now">
                                                                 <i class="fa fa-money"></i>
                                                             </a>

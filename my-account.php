@@ -210,9 +210,9 @@ width: fit-content
                                                             <td><?php echo $row['paymentMethod'];?></td>
                                                             <td>
                                                                 <form action="myorders-code.php" method="post">
-                                                                    <input type="hidden" name="delete_id" value="<?php echo $row['order_id']; ?>">
+                                                                    <input type="hidden" name="delete_id" value="<?php echo $row['rent_id']; ?>">
                                                                 
-                                                                    <button type="submit" name="delete_btn" onclick="return confirm('Are you sure?')" class="btn btn-danger"> CANCEL</button>
+                                                                    <button type="submit" name="delete_rbtn" onclick="return confirm('Are you sure?')" class="btn btn-danger"> CANCEL</button>
                                                                 </form>
                                                             </td>
                                                         </tr>

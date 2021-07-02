@@ -12,36 +12,33 @@ include('includes/header.php');?>
 <?php 
 
 include('config.php');
-if(isset($_POST['csubmit']))
-{
-	$order_no='rent'.rand(100,500);
-	$name = $_POST['name'];
-    $email = $_POST['email'];
-	$phone = $_POST['phone'];
-	$address = $_POST['address'];
-    $bname = $_POST['bname'];
-    $dayissued = $_POST['dayissued'];
-    $sem = $_POST['sem'];
-	$price = $_POST['price'];
-	$date = $_POST['date'];
-	$paymentMethod = $_POST['paymentMethod'];
+    $idd=$_REQUEST['itemno'];
 
+    $id=$_SESSION['username'];
+    $sql="select * from users where name='$id'";
+    $query_run = mysqli_query($connection, $sql);
+    while($row = mysqli_fetch_assoc($query_run))
+        {  
+            $se=$row['service'];
+         
+        } 
+        if($se=='PRO')
+        {
+            header("location:rentbook-checkout.php?itemno='$idd'");  
+        }
+        else if(isset($_POST['submit']))
+        {
+            if($se=='REG')
+            {
+                $query1 = "UPDATE users SET service='PRO' where name='$id'";
+                                                
+                $query_run1 = mysqli_query($connection, $query1);
+                header("location:rentbook-checkout.php?itemno='$idd'");
+                
+            }
 
-
-
-	$query1 = "INSERT INTO booksonrent(order_no,name,email,phone,address,bookname,dayissued,Sem,price,date,paymentMethod) VALUES ('$order_no','$name','$email','$phone','$address','$bname','$dayissued','$sem','$price','$date','$paymentMethod')";
-            $query_run1 = mysqli_query($connection, $query1);
-			
-			if($query_run1){
-				echo "<script>window.location.href='my-account.php';</script>";
-				exit;
-			}else{
-				mysqli_error($connection);
-			}
-
-
-
-}
+       
+         }
 
 ?>
  
@@ -56,10 +53,10 @@ if(isset($_POST['csubmit']))
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-12 text-center">
-                        <h1 class="page-title">Rent A BOOk</h1>
+                        <h1 class="page-title">Premium Member</h1>
                         <ul class="breadcrumb justify-content-center">
-                            <li><a href="index.html">Home</a></li>
-                            <li class="current"><span>rentbook-checkout</span></li>
+                            <li><a href="index.php">Home</a></li>
+                            <li class="current"><span>rentmembership</span></li>
                         </ul>
                     </div>
                 </div>
@@ -76,7 +73,8 @@ if(isset($_POST['csubmit']))
                         <!-- Checkout Area Start -->
                         <div class="col-lg-6">
                             <div class="checkout-title mt--10">
-                                <h2>Billing Details</h2>
+                                <h3>Since you are not pro member,You cant rent a book.</h3>
+                                <h2>Fill PRO Membership Form</h2>
                             </div>
                             <div class="checkout-form">
                                             <?php
@@ -129,43 +127,10 @@ if(isset($_POST['csubmit']))
                                     </div>
                                     <div class="form-row mb--30">
                                         <div class="form__group col-12">
-                                            <label for="billing_bookname" class="form__label form__label--2">BookName <span
-                                                    class="required">*</span></label>
-                                            <input type="text" name="bname" id="billing_bookname"
-                                                class="form__input form__input--2" value="<?php echo $row['rentbook'];?>" readonly>
-                                        </div>
-                                    </div>
-                                    <div class="form-row mb--30">
-                                        <div class="form__group col-12">
-                                            <label for="billing_bookname" class="form__label form__label--2">Dayissued <span
-                                                    class="required">*</span></label>
-                                            <input type="text" name="dayissued" id="billing_bookname"
-                                                class="form__input form__input--2" min='1' max='15'>
-                                        </div>
-                                    </div>
-                                    <div class="form-row mb--30">
-                                        <div class="form__group col-12">
-                                            <label for="billing_semester" class="form__label form__label--2">Semester <span
-                                                    class="required">*</span></label>
-                                            <input type="text" name="sem" id="billing_semester"
-                                                class="form__input form__input--2" value="<?php echo $row['Sem'];?>" readonly>
-                                        </div>
-                                    </div>
-                                    <div class="form-row mb--30">
-                                        <div class="form__group col-12">
-                                            <label for="billing_price" class="form__label form__label--2">Price <span
+                                            <label for="billing_price" class="form__label form__label--2">MemberShip Price <span
                                                     class="required">*</span></label>
                                             <input type="text" name="price" id="billing_price"
-                                                class="form__input form__input--2" value="<?php echo $row['Rent_price'];?>" readonly>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="form-row mb--30">
-                                        <div class="form__group col-12">
-                                            <label for="billing_address" class="form__label form__label--2">OrderDate <span
-                                                    class="required">*</span></label>
-                                                    <input class="form__input form__input--2" name="date" type="date" required>
-                                               
+                                                class="form__input form__input--2" value="NRs. 1000" readonly>
                                         </div>
                                     </div>
                                     
@@ -180,7 +145,7 @@ if(isset($_POST['csubmit']))
                                                 </select>
                                         </div>
                                     </div>
-                                    <button type="submit" name="csubmit" class="btn btn-fullwidth btn-style-1">Place Order</button>
+                                    <button type="submit" name="submit" class="btn btn-fullwidth btn-style-1">Submit Form</button>
                 
                                 </form>
                                 <?php }}?>

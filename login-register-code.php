@@ -41,6 +41,8 @@ if (isset($_POST['rsubmit'])) {
   $phone = mysqli_real_escape_string($connection, $_POST['phone']);
   $address = mysqli_real_escape_string($connection, $_POST['address']);
   $password = mysqli_real_escape_string($connection, $_POST['password']);
+  $usertype = mysqli_real_escape_string($connection, $_POST['usertype']);
+  $service = mysqli_real_escape_string($connection, $_POST['service']);
 
   // form validation: ensure that the form is correctly filled ...
   // by adding (array_push()) corresponding error unto $errors array
@@ -70,8 +72,8 @@ if (isset($_POST['rsubmit'])) {
 else {
   	$password = $password;//encrypt the password before saving in the database
 
-  	$query = "INSERT INTO users (name, email,phone,address,password) 
-  			  VALUES('$username', '$email','$phone','$address','$password')";
+  	$query = "INSERT INTO users (name, email,phone,address,password,usertype,service) 
+  			  VALUES('$username', '$email','$phone','$address','$password','$usertype','$service')";
   	$result=mysqli_query($connection, $query);
 
   	$_SESSION['username'] = $username;
