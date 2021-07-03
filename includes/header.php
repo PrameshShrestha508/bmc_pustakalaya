@@ -36,6 +36,7 @@
     <!-- style CSS -->
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/search.css">
+    <link rel="stylesheet" href="assets/css/rating.css">
     <!-- modernizr JS
     ============================================ -->
     <script src="assets/js/vendor/modernizr-2.8.3.min.js"></script>

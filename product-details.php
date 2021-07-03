@@ -34,6 +34,7 @@ include('includes/header.php');
                                              <?php
                                                 include('config.php');
                                                 $ii=$_GET['itemno'];
+                                                $ud=$_SESSION['username'];
                                                 $query = "SELECT * FROM nbook where new_id=$ii";
                                                 $query_run = mysqli_query($connection,$query);
                                                 if(mysqli_num_rows($query_run) > 0)        
@@ -201,111 +202,10 @@ include('includes/header.php');
                         </div>
                         <?php }}?>
                     </div>
+                    <!-- description and feedback starts -->
+                     <?php include('feedback.php');?>
+                     <!-- description and feedback ends -->
 
-
-                    <div class="row justify-content-center pt--45 pt-lg--50 pt-md--55 pt-sm--35">
-                        <div class="col-12">
-                            <div class="product-data-tab tab-style-1">
-                                <div class="nav nav-tabs product-data-tab__head mb--40 mb-md--30" id="product-tab"
-                                    role="tablist">
-                                    <a class="product-data-tab__link nav-link active" id="nav-description-tab"
-                                        data-toggle="tab" href="#nav-description" role="tab" aria-selected="true">
-                                        <span>Description</span>
-                                    </a>
-                                    <a class="product-data-tab__link nav-link" id="nav-reviews-tab" data-toggle="tab"
-                                        href="#nav-reviews" role="tab" aria-selected="true">
-                                        <span>Reviews(1)</span>
-                                    </a>
-                                </div>
-                                <div class="tab-content product-data-tab__content" id="product-tabContent">
-                                    <div class="tab-pane fade show active" id="nav-description" role="tabpanel"
-                                        aria-labelledby="nav-description-tab">
-                                        <div class="product-description">
-                                                <p>Curabitur sodales euismod nibh. Sed iaculis sed orci eget semper. Nam
-                                                    auctor, augue et eleifend tincidunt, felis mauris convallis neque,
-                                                    in placerat metus urna laoreet diam. Morbi sagittis facilisis arcu
-                                                    sed ornare. Maecenas dictum urna ut facilisis rhoncus.iaculis sed
-                                                    orci eget semper. Nam auctor, augue et eleifend tincidunt, felis
-                                                    mauris</p>
-                                        </div>
-                                    </div>
-                                    <div class="tab-pane fade" id="nav-reviews" role="tabpanel"
-                                        aria-labelledby="nav-reviews-tab">
-                                        <div class="product-reviews">
-                                            <h3 class="review__title">1 review for Waxed-effect pleated skirt</h3>
-                                            <ul class="review__list">
-                                                <li class="review__item">
-                                                    <div class="review__container">
-                                                        <img src="assets/img/others/comment-icon-2.png"
-                                                            alt="Review Avatar" class="review__avatar">
-                                                        <div class="review__text">
-                                                           
-                                                            <div class="review__meta">
-                                                                <strong class="review__author">John Snow </strong>
-                                                                <span class="review__dash">-</span>
-                                                                <span class="review__published-date">November 20,
-                                                                    2018</span>
-                                                            </div>
-                                                            <div class="clearfix"></div>
-                                                            <p class="review__description">Aliquam egestas libero ac
-                                                                turpis pharetra, in vehicula lacus scelerisque.
-                                                                Vestibulum ut sem laoreet, feugiat tellus at, hendrerit
-                                                                arcu.</p>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                            <div class="review-form-wrapper">
-                                                <span class="reply-title"><strong>Add a review</strong></span>
-                                                <form action="#" class="form">
-                                                    <div class="form-notes mb--20">
-                                                        <p>Your email address will not be published. Required fields are
-                                                            marked <span class="required">*</span></p>
-                                                    </div>
-                                                    
-                                                    <div class="form__group mb--30 mb-sm--20">
-                                                        <div class="form-row">
-                                                            <div class="col-sm-6 mb-sm--20">
-                                                                <label class="form__label" for="name">Name<span
-                                                                        class="required">*</span></label>
-                                                                <input type="text" name="name" id="name"
-                                                                    class="form__input">
-                                                            </div>
-                                                            <div class="col-sm-6">
-                                                                <label class="form__label" for="email">email<span
-                                                                        class="required">*</span></label>
-                                                                <input type="email" name="email" id="email"
-                                                                    class="form__input">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="form__group mb--30 mb-sm--20">
-                                                        <div class="form-row">
-                                                            <div class="col-12">
-                                                                <label class="form__label" for="email">Your Review<span
-                                                                        class="required">*</span></label>
-                                                                <textarea name="review" id="review"
-                                                                    class="form__input form__input--textarea"></textarea>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="form__group">
-                                                        <div class="form-row">
-                                                            <div class="col-12">
-                                                                <input type="submit" value="Submit"
-                                                                    class="btn btn-style-1 btn-submit">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </form>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
                     <div class="row pt--35 pt-md--25 pt-sm--15 pb--75 pb-md--55 pb-sm--35">
                         <div class="col-12">
                             <div class="row mb--40 mb-md--30">

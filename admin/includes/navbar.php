@@ -7,9 +7,9 @@
 <!-- Sidebar - Brand -->
 <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php">
   <div class="sidebar-brand-icon rotate-n-15">
-  <i class="fas fa-biking"></i>
+  <i class="fas fa-book-reader"></i>
   </div>
-  <div class="sidebar-brand-text mx-3">Pustakalaya <sup></sup></div>
+  <div class="sidebar-brand-text mx-3">BMC Pustakalaya <sup></sup></div>
 </a>
 
 <!-- Divider -->
@@ -40,8 +40,8 @@
 <!-- Nav Item - Pages Collapse Menu -->
 <li class="nav-item">
   <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-    <i class="fas fa-car fa-3x"></i>
-    <span>Listing</span>
+  <i class="fas fa-book"></i>
+    <span>Category</span>
   </a>
   <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
     <div class="bg-white py-2 collapse-inner rounded">
@@ -56,6 +56,11 @@
   <a class="nav-link" href="orders.php">
   <i class="fas fa-shopping-cart"></i>
     <span>Orders</span></a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="booksonrent.php">
+  <i class="fas fa-book-open"></i>  
+    <span>BooksonRent</span></a>
 </li>
 
 

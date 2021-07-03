@@ -31,10 +31,10 @@ include('includes/header.php');?>
                     <div class="row shop-fullwidth pt--45 pt-md--35 pt-sm--20 pb--60 pb-md--50 pb-sm--40">
                         <div class="container">
                             <div class="row">
-                                <div class="col-xs-12 col-xs-offset-1">
+                                <div class="col-md-12">
                                     <form action="search-rent.php" method="post" role="search">
                                     <div class="input-group">
-                                        <input class="form-control" placeholder="Search Your Book. . ." name="search" id="ed-srch-term" type="text">
+                                        <input class="form-control text-center" placeholder="Search By Bookname/Author/Publicationhouse" name="search"  type="text">
                                     </div>
                                     </form>
                                 </div>

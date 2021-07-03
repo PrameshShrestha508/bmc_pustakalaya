@@ -77,6 +77,7 @@
                                             <i class="dl-icon-menu2"></i>
                                         </a>
                                     </li>
+                                  
                                     <li class="header-toolbar__item user-info-menu-btn">
                                         <a href="#">
                                             <i class="fa fa-user-circle-o"></i>

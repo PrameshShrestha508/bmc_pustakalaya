@@ -34,7 +34,7 @@ include('includes/header.php');
                                              <?php
                                                 include('config.php');
                                                 $search=$_POST['search'];
-                                                $query = "SELECT * FROM obook where oldbook LIKE '%{$search}%'";
+                                                $query = "SELECT * FROM obook where oldbook LIKE '%{$search}%' OR PublicationHouse LIKE '%{$search}%' OR Author LIKE '%{$search}%'";
                                                 $query_run = mysqli_query($connection,$query);
                                                 if(mysqli_num_rows($query_run) > 0)        
                                                 {
