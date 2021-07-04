@@ -52,7 +52,7 @@
 				<div class="receipt-header receipt-header-mid">
 					<div class="col-xs-8 col-sm-8 col-md-8 text-left">
 						<div class="receipt-right">
-                            <h3><u>Buyer Details</u></h3>
+                            <h3><u>Rental Details</u></h3>
 							<h5>Name:<?php echo $row['name'];?> <small>  |  Rent-Order No. : <strong><?php echo $row['order_no'];?></strong></small></h5>
 							<p><b>Mobile :</b> <?php echo $row['phone'];?></p>
 							<p><b>Email :</b> <?php echo $row['email'];?></p>
