@@ -101,7 +101,9 @@ width: fit-content
                                             <p><i class="fa fa-check-circle"></i>No order has been made yet.</p>
                                             <a href="shop-sidebar.php">Go Shop</a>
                                         </div>
+                                       
                                         <div class="table-content table-responsive">
+                                        
                                             <?php
                                                 include('config.php');
                                                 $id=$_SESSION['username'];
@@ -114,8 +116,6 @@ width: fit-content
                                                             <!-- <th>COUNTRY</th> -->
                                                             <th>ORDER No</th>
                                                             <th>USERNAME</th>
-                                                          
-                                                            <th>PHONE</th>
                                                             <th>ADDRESS</th>
                                                             <th>BOOKNAME</th>
                                                             <th>SEM</th>
@@ -123,6 +123,7 @@ width: fit-content
                                                             <th>DATE</th>
                                                             <th>PAYMENT</th>
                                                             <th>Cancel</th>
+                                                            <th>View</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
@@ -134,9 +135,7 @@ width: fit-content
                                                         ?>
                                                         <tr>
                                                             <td><?php echo $row['order_no'];?></td>
-                                                            <td><?php echo $row['name'];?></td>
-                                                            
-                                                            <td><?php echo $row['phone'];?></td>
+                                                            <td><?php echo $row['name'];?></td>                                                                     
                                                             <td><?php echo $row['address'];?></td>
                                                             <td><?php echo $row['bookname'];?></td>
                                                             <td><?php echo $row['Sem'];?></td>
@@ -149,6 +148,9 @@ width: fit-content
                                                                 
                                                                     <button type="submit" name="delete_btn" onclick="return confirm('Are you sure?')" class="btn btn-danger"> CANCEL</button>
                                                                 </form>
+                                                            </td>
+                                                            <td>
+                                                                <button class="btn btn-primary"><a href="view-order.php?itemno='<?php echo $row['order_id'];?>'" target="_blank">View</a></button>
                                                             </td>
                                                         </tr>
                                                     
@@ -178,7 +180,6 @@ width: fit-content
                                                             <!-- <th>COUNTRY</th> -->
                                                             <th>ORDER No</th>
                                                             <th>USERNAME</th>
-                                                            <th>PHONE</th>
                                                             <th>ADDRESS</th>
                                                             <th>BOOKNAME</th>
                                                             <th>DayIsseued</th>
@@ -187,6 +188,7 @@ width: fit-content
                                                             <th>DATE</th>
                                                             <th>PAYMENT</th>
                                                             <th>Cancel</th>
+                                                            <th>View</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
@@ -198,9 +200,7 @@ width: fit-content
                                                         ?>
                                                         <tr>
                                                             <td><?php echo $row['order_no'];?></td>
-                                                            <td><?php echo $row['name'];?></td>
-                                                            
-                                                            <td><?php echo $row['phone'];?></td>
+                                                            <td><?php echo $row['name'];?></td>                              
                                                             <td><?php echo $row['address'];?></td>
                                                             <td><?php echo $row['bookname'];?></td>
                                                             <td><?php echo $row['dayissued'];?></td>
@@ -215,6 +215,11 @@ width: fit-content
                                                                     <button type="submit" name="delete_rbtn" onclick="return confirm('Are you sure?')" class="btn btn-danger"> CANCEL</button>
                                                                 </form>
                                                             </td>
+                                                           
+                                                            <td>
+                                                                <button class="btn btn-primary"><a href="view-booksonrent.php?itemno='<?php echo $row['rent_id'];?>'" target="_blank">View</a></button>
+                                                            </td>
+                                                            
                                                         </tr>
                                                     
                                                         <?php }}?>
