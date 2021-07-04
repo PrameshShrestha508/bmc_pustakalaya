@@ -56,6 +56,7 @@ if(isset($_SESSION['status']) && $_SESSION['status'] !='')
             <th>Price</th>
             <th>Date</th>
             <th>payment</th>
+            <th>status</th>
             <th>DELETE </th>
           </tr>
         </thead>
@@ -82,6 +83,16 @@ if(isset($_SESSION['status']) && $_SESSION['status'] !='')
                                 <td><?php  echo$row['price']; ?></td>
                                 <td><?php  echo$row['date']; ?></td>
                                 <td><?php  echo $row['paymentMethod']; ?></td>
+                                <td>
+                                <?php if($row['status']=='processing'){?>
+
+                            <a href="status.php?id=<?php  echo $row['order_id'];?>" class="btn btn-primary">Processing</a>
+                            <?php  } elseif($row['status']=='transporting'){ ?>
+                            <a href="status2.php?id=<?php  echo $row['order_id'];?>" class="btn btn-warning">Transporting</a>
+                            <?php  } else{ ?>
+                              <a href="status3.php?id=<?php  echo $row['order_id'];?>" class="btn btn-success">Completed</a>
+                            <?php } ?>
+                                </td>
                                 <td>
                                     <form action="orders-code.php" method="post">
                                         <input type="hidden" name="delete_id" value="<?php echo $row['order_id']; ?>">

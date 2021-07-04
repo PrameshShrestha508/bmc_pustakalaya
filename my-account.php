@@ -122,6 +122,7 @@ width: fit-content
                                                             <th>PRICE</th>
                                                             <th>DATE</th>
                                                             <th>PAYMENT</th>
+                                                           
                                                             <th>Cancel</th>
                                                             <th>View</th>
                                                         </tr>
@@ -142,6 +143,7 @@ width: fit-content
                                                             <td><?php echo $row['price'];?></td>
                                                             <td><?php echo $row['date'];?></td>
                                                             <td><?php echo $row['paymentMethod'];?></td>
+                                                           
                                                             <td>
                                                                 <form action="myorders-code.php" method="post">
                                                                     <input type="hidden" name="delete_id" value="<?php echo $row['order_id']; ?>">

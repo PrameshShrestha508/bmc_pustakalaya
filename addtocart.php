@@ -12,7 +12,7 @@ $query_run = mysqli_query($connection, $sql);
          
         } 
 if($cid==$itemno){
-    header("Refresh:5; url=checkout-direct.php?itemno='$itemno'");
+    header("Refresh:3; url=checkout-direct.php?itemno='$itemno'");
     echo '<h1>Your Product is already in cart.<h1>
         <h3>Redirecting To checkout.....</h3>';
 }else if(!$_SESSION['username']=='')

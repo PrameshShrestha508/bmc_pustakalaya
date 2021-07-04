@@ -24,11 +24,12 @@ if(isset($_POST['submit']))
 	$price = $_POST['price'];
 	$date = $_POST['date'];
 	$paymentMethod = $_POST['paymentMethod'];
+    $status = $_POST['status'];
 
 
 
 
-	$query1 = "INSERT INTO orders(order_no,name,email,phone,address,bookname,Sem,price,date,paymentMethod) VALUES ('$order_no','$name','$email','$phone','$address','$bname','$sem','$price','$date','$paymentMethod')";
+	$query1 = "INSERT INTO orders(order_no,name,email,phone,address,bookname,Sem,price,date,paymentMethod,status) VALUES ('$order_no','$name','$email','$phone','$address','$bname','$sem','$price','$date','$paymentMethod','$status')";
             $query_run1 = mysqli_query($connection, $query1);
 			
 			if($query_run1){
@@ -95,6 +96,7 @@ if(isset($_POST['submit']))
                                         <div class="form__group col-md-12 mb-sm--30">
                                             <label for="billing_name" class="form__label form__label--2">Username
                                                 <span class="required">*</span></label>
+                                                <input type="hidden" name="status" value="processing">
                                             <input type="text" name="name" id="billing_name"
                                                 class="form__input form__input--2" value="<?php echo $_SESSION['username'];?>" readonly>
                                         </div>

@@ -92,6 +92,9 @@
                                             <li>
                                                 <a href="login-register.php">Login/Register</a>
                                             </li>
+                                            <li>
+                                                <a href="order-tracking.php">Order tracking</a>
+                                            </li>
                                             <!-- <li>
                                                 <a href="checkout.php">Check Out</a>
                                             </li>
