@@ -28,8 +28,14 @@ if(isset($_POST['delete_rbtn']))
 if(isset($_POST['delete_cart_btn']))
 {
     $id = $_POST['delete_id'];
-    echo $id;
-    die();
+   
+    $query = "DELETE FROM mycart WHERE cartid='$id' ";
+    $query_run = mysqli_query($connection, $query);
+
+    if($query_run)
+    {
+        header('Location:cart.php'); 
+    }
 
     
 }

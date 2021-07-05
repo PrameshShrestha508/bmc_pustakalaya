@@ -95,7 +95,7 @@
                         {
                             while($row = mysqli_fetch_assoc($query_run))
                             {
-                                $dc='50';
+                                $dc='10';
                                 ?>
                         <tr>
                             <td class="col-md-9"> <strong>Bookname: </strong></td>
@@ -115,6 +115,9 @@
                                 <strong>Total Amount: </strong>
                             </p>
                             <p>
+                                <strong>Quantity: </strong>
+                            </p>
+                            <p>
                                 <strong>Delivery Charge: </strong>
                             </p>
 							
@@ -122,6 +125,9 @@
                             <td>
                             <p>
                                 <strong><i class="fa fa-inr"></i><?php echo $row['price'];?></strong>
+                            </p>
+                            <p>
+                                <strong><i class="fa fa-inr"></i><?php echo $row['quantity'];?></strong>
                             </p>
                             <p>
                                 <strong><i class="fa fa-inr"></i><?php echo $dc;?></strong>
@@ -140,7 +146,8 @@
                             <td class="text-left text-danger"><h2><strong><i class="fa fa-inr"></i> <?php 
                           
                             $p=$row['price'];
-                            echo 'Nrs. '.($p + $dc);
+                            $q=$row['quantity'];
+                            echo 'Nrs. '.(($p*$q)+$dc);
                             ?></strong></h2></td>
                         </tr>
                         <?php }}?>

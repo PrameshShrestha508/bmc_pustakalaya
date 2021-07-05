@@ -119,11 +119,11 @@ width: fit-content
                                                             <th>ADDRESS</th>
                                                             <th>BOOKNAME</th>
                                                             <th>SEM</th>
-                                                            <th>PRICE</th>
+                                                            <th>Qty</th>
+                                                            <th>T.PRICE</th>
                                                             <th>DATE</th>
-                                                            <th>PAYMENT</th>
-                                                           
-                                                            <th>Cancel</th>
+                                                            <th>PAYMENT</th> 
+                                                             <th>Cancel</th>
                                                             <th>View</th>
                                                         </tr>
                                                     </thead>
@@ -140,7 +140,8 @@ width: fit-content
                                                             <td><?php echo $row['address'];?></td>
                                                             <td><?php echo $row['bookname'];?></td>
                                                             <td><?php echo $row['Sem'];?></td>
-                                                            <td><?php echo $row['price'];?></td>
+                                                            <td><?php echo $row['quantity'];?></td>
+                                                            <td><?php echo $row['price']*$row['quantity'];?></td>
                                                             <td><?php echo $row['date'];?></td>
                                                             <td><?php echo $row['paymentMethod'];?></td>
                                                            
