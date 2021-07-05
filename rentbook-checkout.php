@@ -25,10 +25,14 @@ if(isset($_POST['csubmit']))
 	$price = $_POST['price'];
 	$date = $_POST['date'];
 	$paymentMethod = $_POST['paymentMethod'];
-
-
-
-
+    $user=$_SESSION['username'];
+    
+    $query = "SELECT rent_id FROM booksonrent where name='$user' ORDER BY rent_id";  
+    $query_run = mysqli_query($connection, $query);
+    $row = mysqli_num_rows($query_run);
+ 
+   
+    if($row<2){
 	$query1 = "INSERT INTO booksonrent(order_no,name,email,phone,address,bookname,dayissued,Sem,price,date,paymentMethod) VALUES ('$order_no','$name','$email','$phone','$address','$bname','$dayissued','$sem','$price','$date','$paymentMethod')";
             $query_run1 = mysqli_query($connection, $query1);
 			
@@ -39,7 +43,15 @@ if(isset($_POST['csubmit']))
 				mysqli_error($connection);
 			}
 
-
+            }
+            else
+            {
+            echo '<script>
+            alert("You can rent only two book at time");
+            window.location.href="rentbook.php";
+            </script>';
+         
+             }
 
 }
 
