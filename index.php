@@ -43,7 +43,114 @@
                 </div>
             </div>
             <!-- Video section End Here -->
-
+            <!-- counter collection -->
+        <div class="container gray-bg">
+            <div class="row">
+                <div class="four col-md-3">
+                    <div class="counter-box colored"> <i class="fa fa-group"></i> 
+                    <span class="counter">
+                            <?php 
+                                $query = "SELECT user_id FROM users ORDER BY user_id";  
+                                $query_run = mysqli_query($connection, $query);
+                                $row = mysqli_num_rows($query_run);
+                            echo $row;
+                            ?>
+                    </span>
+                        <p>Registered Members</p>
+                    </div>
+                </div>
+                <div class="four col-md-3">
+                    <div class="counter-box"> <i class="fa fa-book"></i> 
+                    <span class="counter">
+                            <?php 
+                                $query = "SELECT new_id FROM nbook ORDER BY new_id";  
+                                $query_run = mysqli_query($connection, $query);
+                                $row = mysqli_num_rows($query_run);
+                                echo $row;
+                            ?>
+                    </span>
+                        <p>Total New Books</p>
+                    </div>
+                </div>
+                <div class="four col-md-3">
+                    <div class="counter-box"> <i class="fa fa-book"></i>
+                    <span class="counter">
+                            <?php 
+                                $query = "SELECT old_id FROM obook ORDER BY old_id";  
+                                $query_run = mysqli_query($connection, $query);
+                                $row = mysqli_num_rows($query_run);
+                                echo $row;
+                            ?>
+                    </span>
+                        <p>Total Old Books</p>
+                    </div>
+                </div>
+                <div class="four col-md-3">
+                    <div class="counter-box"> <i class="fa fa-book"></i> 
+                    <span class="counter">
+                            <?php 
+                                $query = "SELECT rent_id FROM rbook ORDER BY rent_id";  
+                                $query_run = mysqli_query($connection, $query);
+                                $row = mysqli_num_rows($query_run);
+                                echo $row;
+                            ?>
+                    </span>
+                        <p>Total Rent Books</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+             <!-- counter collection end-->
+            
+<!-- popular-selling-brand -->
+<section class="popular-selling-brand gray-bg pt-50 pb-120 mt-5">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <div class="popular-selling-wrap">
+                                <div class="popular-selling-top">
+                                    <div class="popular-selling-title text-center">
+                                        <h4>Favorite Publication House</h4>
+                                    </div>
+                                    <div class="see-all-brand">
+                                        <a href="#">See all Publication</a>
+                                    </div>
+                                </div>
+                                <div class="row justify-content-center">
+                                    <div class="col-lg-3 col-md-4 col-sm-6">
+                                        <div class="popular-selling-items">
+                                            <a href="kec.php"><img src="assets/img/others/kec.jpg" height="145px" alt=""></a>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-4 col-sm-6">
+                                        <div class="popular-selling-items">
+                                            <a href="pearson.php"><img src="assets/img/others/pearson.png" alt=""></a>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-4 col-sm-6">
+                                        <div class="popular-selling-items">
+                                            <a href="osborne.php"><img src="assets/img/others/osbo.png" alt=""></a>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-4 col-sm-6">
+                                        <div class="popular-selling-items">
+                                            <a href="#"><img src="assets/img/others/mcg.png" alt=""></a>
+                                        </div>
+                                    </div>
+                                    
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="popular-selling-ad-banner">
+                                <a href="#"><img src="assets/img/others/banner.jpg" alt=""></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- popular-selling-brand-end -->
             <!-- Trending Products area Start Here -->
             <section class="trending-products-area pt--30 pb--80 pt-md--20 pb-md--60">
                 <div class="container-fluid">
@@ -107,7 +214,7 @@
                                             <br><a href="product-details.php?itemno=<?php echo $row['new_id']; ?>"><?php echo $row['Author']; ?></a>
                                         </h3>
                                         <span class="product-price-wrapper">
-                                            <span class="money"><?php echo 'NRS. '.$row['Price']; ?></span>
+                                            <span class="money text-white"><?php echo 'NRS. '.$row['Price']; ?></span>
                                             
                                         </span>
                                     </div>

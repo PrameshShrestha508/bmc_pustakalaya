@@ -34,21 +34,23 @@
                                     data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]"
                                     style="z-index: 5; min-width: 919px; max-width: 919px; max-width: 489px; max-width: 489px; white-space: nowrap; font-size: 20px; line-height: 22px; font-weight: 400; color: #ffffff; letter-spacing: 0px;">
                                     <!-- LAYER NR. 2 -->
-                                    <div class="tp-caption   tp-resizeme" id="slide-3-layer-3"
-                                        data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
-                                        data-y="['top','top','top','top']" data-voffset="['50','50','51','51']"
-                                        data-fontsize="['120','120','100','80']"
-                                        data-lineheight="['120','120','100','80']" data-width="none" data-height="none"
-                                        data-whitespace="nowrap" data-type="text" data-responsive_offset="on"
-                                        data-frames='[{"delay":"+790","speed":1500,"frame":"0","from":"x:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
+                                    <div class="tp-caption   tp-resizeme" id="slide-1-layer-2"
+                                        data-x="['left','left','left','left']" data-hoffset="['111','111','20','0']"
+                                        data-y="['top','top','top','top']" data-voffset="['127','127','117','105']"
+                                        data-fontsize="['60','60','40','30']" data-lineheight="['50','50','40','30']"
+                                        data-width="none" data-height="none" data-whitespace="nowrap" data-type="text"
+                                        data-responsive_offset="on"
+                                        data-frames='[{"delay":"+390","speed":1500,"frame":"0","from":"x:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
                                         data-margintop="[0,0,0,0]" data-marginright="[0,0,0,0]"
                                         data-marginbottom="[0,0,0,0]" data-marginleft="[0,0,0,0]"
                                         data-textAlign="['inherit','inherit','inherit','inherit']"
                                         data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]"
                                         data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]"
-                                        style="z-index: 7; white-space: nowrap; font-size: 120px; line-height: 120px; font-weight: 400; color: #ffffff; letter-spacing: 0px;font-family:Playfair Display;">
+                                        style="z-index: 6; white-space: nowrap; font-size: 50px; line-height: 50px; font-weight: 400; color: #ffffff; letter-spacing: 5px;font-family:Montserrat;">
                                         BMC PUSTAKALAYA<br>
-                                        <strong>Hamro Book Pasal</strong></div>
+                                        <strong>Hamro Book Pasal</strong>
+                                        
+                                         </div>
 
                                     <!-- LAYER NR. 3 -->
                                     <div class="tp-caption   tp-resizeme" id="slide-1-layer-3"
@@ -137,7 +139,7 @@
                                         data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]"
                                         data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]"
                                         style="z-index: 7; white-space: nowrap; font-size: 165px; line-height: 220px; font-weight: 400; color: #ffffff; letter-spacing: 0px;font-family:Playfair Display;">
-                                        Off 30% </div>
+                                        Off 20% </div>
 
                                     <!-- LAYER NR. 8 -->
                                     <a class="tp-caption rev-btn " href="index.php" id="slide-2-layer-4"
@@ -202,7 +204,7 @@
                                     <div class="tp-caption   tp-resizeme" id="slide-3-layer-3"
                                         data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
                                         data-y="['top','top','top','top']" data-voffset="['50','50','51','51']"
-                                        data-fontsize="['120','120','100','80']"
+                                        data-fontsize="['70','70','50','40']"
                                         data-lineheight="['120','120','100','80']" data-width="none" data-height="none"
                                         data-whitespace="nowrap" data-type="text" data-responsive_offset="on"
                                         data-frames='[{"delay":"+790","speed":1500,"frame":"0","from":"x:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
@@ -211,7 +213,7 @@
                                         data-textAlign="['inherit','inherit','inherit','inherit']"
                                         data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]"
                                         data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]"
-                                        style="z-index: 7; white-space: nowrap; font-size: 120px; line-height: 120px; font-weight: 400; color: #ffffff; letter-spacing: 0px;font-family:Playfair Display;">
+                                        style="z-index: 7; white-space: nowrap; font-size: 10px; line-height: 100px; font-weight: 400; color: #ffffff; letter-spacing: 0px;font-family:Playfair Display;">
                                         BUY BOOK NOW </div>
 
                                     <!-- LAYER NR. 12 -->

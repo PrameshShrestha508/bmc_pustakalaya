@@ -2,6 +2,13 @@
 <?php
  error_reporting(1);
  session_start();
+ if(!$_SESSION['username'])
+{   
+    echo '<script>
+    alert("Please Login first");
+    window.location.href="login-register.php";
+    </script>';
+}
 include('includes/header.php');?>
 
 

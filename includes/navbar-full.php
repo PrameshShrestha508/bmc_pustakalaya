@@ -187,9 +187,20 @@
                                         </ul>
                                     </li>
                                     <li class="header-toolbar__item">
-                                        <a href="#miniCart" class="mini-cart-btn toolbar-btn">
+                                        <a href="cart.php" class="mini-cart-btn">
                                             <i class="dl-icon-cart4"></i>
-                                            <sup class="mini-cart-count">2</sup>
+                                            <sup class="mini-cart-count">
+                                            <?php 
+                                                error_reporting(1);
+                                                session_start();
+                                                include('config.php');
+                                                $id=$_SESSION['username'];
+                                                $query = "SELECT cartid FROM mycart where username='$id' ORDER BY cartid";  
+                                                $query_run = mysqli_query($connection, $query);
+                                                $row = mysqli_num_rows($query_run);
+                                                echo $row;
+                                            ?>
+                                            </sup>
                                         </a>
                                     </li>
                                     <li class="header-toolbar__item">

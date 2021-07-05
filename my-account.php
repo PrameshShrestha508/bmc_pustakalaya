@@ -40,9 +40,16 @@ width: fit-content
   font-size:15px;
   text-align:center;
 }
-#orders{
-    max-width:1000px;
+
+.table-responsive {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
 }
+
+
 
 </style>
     <!-- Main Wrapper Start -->

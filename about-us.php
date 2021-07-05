@@ -76,16 +76,20 @@
                                     mattis convallis. Quisque ut nulla viverra, posuere lorem eget, ultrices metus.</p>
                                 <ul class="list-with-icon color--light-3">
                                     <li class="mb--30 mb-md--25">
-                                        <i class="fa fa-hourglass"></i>
-                                        <span>Praesent sed ex vel mauris ele.</span>
+                                        <i class="fa fa-truck"></i>
+                                        <span>Free Delivery</span>
                                     </li>
                                     <li class="mb--30 mb-md--25">
-                                        <i class="fa fa-sun-o"></i>
-                                        <span>Nam vel luctus nulla, eget interdum metus</span>
+                                        <i class="fa fa-credit-card"></i>
+                                        <span>Secure Payment</span>
                                     </li>
                                     <li class="mb--25 mb-md--20">
-                                        <i class="fa fa-bolt"></i>
-                                        <span>Nam vel luctus nulla, eget interdum metus</span>
+                                        <i class="fa fa-check-circle"></i>
+                                        <span>Money Back Guarantee</span>
+                                    </li>
+                                    <li class="mb--25 mb-md--20">
+                                    <i class="fa fa-question-circle"></i>
+                                        <span>24/7 Support</span>
                                     </li>
                                 </ul>
                                 <p class="color--light-3">Dspendisse sodales dolor nec mattis convallis. Quisque ut

@@ -131,7 +131,7 @@ include('includes/header.php');?>
                                     in stock
                                 </span>
                                 <div class="product-price-wrapper mb--40 mb-md--10">
-                                    <span class="money"><?php echo 'Nrs. '.$row['Price'];?></span>
+                                    <span class="money text-white"><?php echo 'Nrs. '.$row['Price'];?></span>
                                     
                                 </div>
                                 <h4>Please Contact with seller for this book:</h4>

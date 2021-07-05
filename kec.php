@@ -13,10 +13,10 @@ include('includes/header.php');?>
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-12 text-center">
-                        <h1 class="page-title">Fifth Semester Book</h1>
+                        <h1 class="page-title">KEC BOOKS</h1>
                         <ul class="breadcrumb justify-content-center">
                             <li><a href="index.php">Home</a></li>
-                            <li class="current"><span>fifth-sem</span></li>
+                            <li class="current"><span>kec</span></li>
                         </ul>
                     </div>
                 </div>
@@ -29,9 +29,7 @@ include('includes/header.php');?>
             <div class="shop-page-wrapper">
                 <div class="container-fluid">
                     <div class="row shop-fullwidth pt--45 pt-md--35 pt-sm--20 pb--60 pb-md--50 pb-sm--40">
-                        <!-- search box -->
-                        <?php include('includes/search-box.php');?>
-                             <!-- search box ends-->
+                        
                         <div class="col-12">
                             <div class="shop-toolbar">
                                 <div class="shop-toolbar__inner">
@@ -44,7 +42,7 @@ include('includes/header.php');?>
 
                                                 <?php 
                                                 include('config.php');
-                                                $query = "SELECT new_id FROM nbook where Sem='5' ORDER BY new_id";  
+                                                $query = "SELECT new_id FROM nbook where PublicationHouse='KEC' ORDER BY new_id";  
                                                 $query_run = mysqli_query($connection, $query);
                                                 $row = mysqli_num_rows($query_run);
                                                 echo $row;
@@ -54,8 +52,8 @@ include('includes/header.php');?>
                                             </div>
                                         </div>
                                         <div class="col-md-6">     
-                                               <!-- category box -->
-                                               <?php include('includes/category.php');?>
+                                                <!-- category box -->
+                                                <?php include('includes/category.php');?>
                                                 <!-- category box ends-->
                                          </div>
                                     </div>
@@ -65,7 +63,7 @@ include('includes/header.php');?>
                                 <div class="row grid-space-20 xxl-block-grid-5">
                                             <?php
                                                 include('config.php');
-                                                $query = "SELECT * FROM nbook where Sem='5' LIMIT 8";
+                                                $query = "SELECT * FROM nbook where PublicationHouse='KEC' LIMIT 8";
                                                 $query_run = mysqli_query($connection, $query);
                                                 if(mysqli_num_rows($query_run) > 0)        
                                                 {

@@ -29,17 +29,7 @@ include('includes/header.php');?>
             <div class="shop-page-wrapper">
                 <div class="container-fluid">
                     <div class="row shop-fullwidth pt--45 pt-md--35 pt-sm--20 pb--60 pb-md--50 pb-sm--40">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-xs-12 col-xs-offset-1">
-                                    <form action="#" method="#" role="search">
-                                    <div class="input-group">
-                                        <input class="form-control" placeholder="Search Your Book. . ." name="srch-term" id="ed-srch-term" type="text">
-                                    </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
+                       
                         <div class="col-12">
                             <div class="shop-toolbar">
                                 <div class="shop-toolbar__inner">
@@ -62,22 +52,9 @@ include('includes/header.php');?>
                                             </div>
                                         </div>
                                         <div class="col-md-6">     
-                                                <div class="product-ordering">
-                                                    <a href="#" class="product-ordering__btn shop-toolbar__btn">
-                                                        <span>Choose Category Wise</span>
-                                                        <i></i>
-                                                    </a>
-                                                    <ul class="product-ordering__list" width="100%">
-                                                        <li class="active"><a href="first-sem.php">First Semester</a></li>
-                                                        <li><a href="second-sem.php">Second Semester</a></li>
-                                                        <li><a href="third-sem.php">Third Semester</a></li>
-                                                        <li><a href="forth-sem.php">Forth Semester</a></li>
-                                                        <li><a href="fifth-sem.php">Fifth Semester</a></li>
-                                                        <li><a href="sixth-sem.php">Sixth Semester</a></li>
-                                                        <li><a href="seventh-sem.php">Seventh Semester</a></li>
-                                                        <li><a href="eight-sem.php">Eight Semester</a></li>
-                                                    </ul>
-                                                </div>  
+                                               <!-- category box -->
+                                               <?php include('includes/category.php');?>
+                                                <!-- category box ends-->
                                          </div>
                                     </div>
                                 </div>
@@ -143,7 +120,7 @@ include('includes/header.php');?>
                                                         <a href="product-details.php?itemno=<?php echo $row['new_id']; ?>"><?php echo $row['Author'];?></a>
                                                     </h3>
                                                     <span class="product-price-wrapper">
-                                                        <span class="money"><?php echo 'Nrs. '.$row['Price'];?></span>
+                                                        <span class="money text-white"><?php echo 'Nrs. '.$row['Price'];?></span>
                                                         
                                                     </span>
                                                 </div>

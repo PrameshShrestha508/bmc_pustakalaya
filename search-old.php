@@ -83,7 +83,7 @@ include('includes/header.php');
                                                         <a href="product-details.php?itemno=<?php echo $row['old_id']; ?>"><?php echo $row['Author'];?></a>
                                                     </h3>
                                                     <span class="product-price-wrapper">
-                                                        <span class="money"><?php echo 'Nrs. '.$row['Price'];?></span>
+                                                        <span class="money text-white"><?php echo 'Nrs. '.$row['Price'];?></span>
                                                         
                                                     </span>
                                                 </div>

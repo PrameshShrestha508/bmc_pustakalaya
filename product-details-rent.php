@@ -132,7 +132,7 @@ include('includes/header.php');
                                     in stock
                                 </span>
                                 <div class="product-price-wrapper mb--40 mb-md--10">
-                                    <span class="money"><?php echo 'Nrs. '.$row['Rent_price'];?></span>
+                                    <span class="money text-white"><?php echo 'Nrs. '.$row['Rent_price'];?></span>
                                     
                                 </div>
                                 <div class="clearfix"></div>
@@ -143,7 +143,7 @@ include('includes/header.php');
                                             <input type="number" class="quantity-input" name="qty" id="qty" value="1"
                                                 min="1">
                                         </div> -->
-                                        <button type="button" class="btn btn-style-1 btn-large text-center">
+                                        <button type="button" class="btn btn-success btn-large">
                                            <a href="rentbook-checkout.php?itemno=<?php echo $row['rent_id'];?>">Rent A Book</a>
                                         </button>
                                         <!-- <a href="wishlist.php"><i class="dl-icon-heart2"></i></a>
@@ -368,7 +368,7 @@ include('includes/header.php');
                                                         <br><a href="product-details-rent.php?itemno=<?php echo $row['rent_id']; ?>"><?php echo $row['Author']; ?></a>
                                                     </h3>
                                                     <span class="product-price-wrapper">
-                                                        <span class="money"><?php echo 'Nrs. '.$row['Rent_price']; ?></span>
+                                                        <span class="money text-white"><?php echo 'Nrs. '.$row['Rent_price']; ?></span>
                                                        
                                                     </span>
                                                 </div>
