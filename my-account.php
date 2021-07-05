@@ -84,7 +84,7 @@ width: fit-content
                                     <a class="nav-link" data-toggle="pill" role="tab" href="#rentbook"
                                         aria-controls="rentbook" aria-selected="true">RentBookStatus</a>
                                     <a class="nav-link" data-toggle="pill" role="tab" href="#accountdetails"
-                                        aria-controls="accountdetails" aria-selected="true">Account Details</a>
+                                        aria-controls="accountdetails" aria-selected="true">Password Change</a>
                                     <a class="nav-link" href="logout.php">Logout</a>
                                 </div>
                                 <div class="user-dashboard-tab__content tab-content">
@@ -165,10 +165,10 @@ width: fit-content
                                     </div>
                                    
                                     <div class="tab-pane fade" id="rentbook">
-                                    <div class="message-box mb--30 d-none">
+                                        <!-- <div class="message-box mb--30 d-none">
                                             <p><i class="fa fa-check-circle"></i>No order has been made yet.</p>
                                             <a href="shop-sidebar.php">Go Shop</a>
-                                        </div>
+                                        </div> -->
                                         <div class="table-content table-responsive">
                                             <?php
                                                 include('config.php');
@@ -232,38 +232,8 @@ width: fit-content
                                         </div>
                                     </div>
                                     <div class="tab-pane fade" id="accountdetails">
-                                        <form action="#" class="form form--account">
-                                            <div class="row grid-space-30 mb--20">
-                                                <div class="col-md-6 mb-sm--20">
-                                                    <div class="form__group">
-                                                        <label class="form__label" for="f_name">First name <span
-                                                                class="required">*</span></label>
-                                                        <input type="text" name="f_name" id="f_name"
-                                                            class="form__input">
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="form__group">
-                                                        <label class="form__label" for="l_name">Last name <span
-                                                                class="required">*</span></label>
-                                                        <input type="text" name="l_name" id="l_name"
-                                                            class="form__input">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="row mb--20">
-                                                <div class="col-12">
-                                                    <div class="form__group">
-                                                        <label class="form__label" for="d_name">Display name <span
-                                                                class="required">*</span></label>
-                                                        <input type="text" name="d_name" id="d_name"
-                                                            class="form__input">
-                                                        <span class="suggestion"><em>This will be how your name will be
-                                                                displayed in the account section and in
-                                                                reviews</em></span>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                        <form action="update_password.php" method="post" class="form form--account">
+                                        <fieldset class="form__fieldset mb--20">
                                             <div class="row mb--20">
                                                 <div class="col-12">
                                                     <div class="form__group">
@@ -273,14 +243,14 @@ width: fit-content
                                                     </div>
                                                 </div>
                                             </div>
-                                            <fieldset class="form__fieldset mb--20">
-                                                <legend class="form__legend">Password change</legend>
+                                         
+                                                <legend class="form__legend">Password Change</legend>
                                                 <div class="row mb--20">
                                                     <div class="col-12">
                                                         <div class="form__group">
-                                                            <label class="form__label" for="cur_pass">Current password
+                                                            <label class="form__label" for="old_pass">Current/Old password
                                                                 (leave blank to leave unchanged)</label>
-                                                            <input type="password" name="cur_pass" id="cur_pass"
+                                                            <input type="password" name="old_pass" id="old_pass"
                                                                 class="form__input">
                                                         </div>
                                                     </div>
@@ -298,10 +268,10 @@ width: fit-content
                                                 <div class="row">
                                                     <div class="col-12">
                                                         <div class="form__group">
-                                                            <label class="form__label" for="conf_new_pass">Confirm new
+                                                            <label class="form__label" for="re_pass">Confirm new
                                                                 password</label>
-                                                            <input type="password" name="conf_new_pass"
-                                                                id="conf_new_pass" class="form__input">
+                                                            <input type="password" name="re_pass"
+                                                                id="re_pass" class="form__input">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -309,7 +279,7 @@ width: fit-content
                                             <div class="row">
                                                 <div class="col-12">
                                                     <div class="form__group">
-                                                        <input type="submit" value="Save Changes"
+                                                        <input type="submit" value="Save Changes" name="re_password"
                                                             class="btn btn-style-1 btn-submit">
                                                     </div>
                                                 </div>

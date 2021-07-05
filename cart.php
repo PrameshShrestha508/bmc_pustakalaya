@@ -93,7 +93,7 @@ include('includes/header.php');?>
                              
                                                 <td>
                                                     <form action="myorders-code.php" method="post">
-                                                        <input type="hidden" name="delete_id" value="<?php echo $row['cartid']; ?>">
+                                                        <input type="hidden" name="delete_id" value="<?php echo $row['cartid'];?>">
                                                         <button type="submit" name="delete_cart_btn" onclick="return confirm('Are you sure?')" class="btn btn-danger"> DELETE</button>
                                                     </form>
                                                 </td>
