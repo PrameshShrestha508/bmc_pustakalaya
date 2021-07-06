@@ -50,6 +50,26 @@ width: fit-content
 }
 
 
+img {
+  border-radius: 50%;
+}
+.texty{
+    color:#e96125
+}
+.my_file{
+    background-color:blue;
+    color:white;
+    padding:5px;
+    border-radius:5px;
+}
+#submit{
+    margin:10px 0 10px 0;
+    background-color:blue;
+    color:white;
+    padding:7px;
+    border-radius:5px; 
+}
+
 
 </style>
     <!-- Main Wrapper Start -->
@@ -77,10 +97,35 @@ width: fit-content
         <!-- Main Content Wrapper Start -->
         <div id="content" class="main-content-wrapper">
             <div class="page-content-inner">
+            
                 <div class="container">
+                    <?php
+                        
+                        include("config.php");
+                        $id=$_SESSION['username'];
+                        $query = "SELECT * FROM img_upload where uname='$id'";
+                        $query_run = mysqli_query($connection, $query);
+                        if(mysqli_num_rows($query_run) > 0)        
+                        {
+                            while($row = mysqli_fetch_assoc($query_run))
+                            {
+                    ?>
+                    
+                    <img src="<?php echo 'assets/img/logo/'.$row['image']; ?>" height="100px" width="100px" alt="Profile">
+                    <p class="texty">Hello, <strong><?php echo $_SESSION['username'];?></p>
+                   <?php }} ?>
+                    <p><strong>Upload User Profile</strong></p>
+                    <form action="img-upload.php" method="post" enctype="multipart/form-data">
+                        <input type="file" name="fileToUpload" class="my_file" required><br>
+              
+                        <input type="submit" name="send" value="upload" id="submit">
+                    </form>
+                    
                     <div class="row pt--80 pt-md--60 pt-sm--40 pb--80 pb-md--60 pb-sm--40">
                         <div class="col-12">
+                            
                             <div class="user-dashboard-tab flex-column flex-md-row">
+                            
                                 <div class="user-dashboard-tab__head nav flex-md-column" role="tablist"
                                     aria-orientation="vertical">
                                     <a class="nav-link active" data-toggle="pill" role="tab" href="#dashboard"
