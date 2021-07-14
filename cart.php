@@ -41,9 +41,9 @@ include('includes/header.php');?>
                 <div class="container">
                     <div class="row">
                         <div class="col-12">
-                            <form action="" method="post">
+                            <!-- <form action="" method="post"> -->
                                 <div class="table-content table-responsive">
-                                    <table class="table">
+                                    <table class="table"  id="crt_table">
                                         <thead>
                                             <tr>
                                                 
@@ -52,6 +52,8 @@ include('includes/header.php');?>
                                                 <th class="product-author">Author</th>  
                                                 <th class="product-semester">Semester</th> 
                                                 <th class="product-price">Price</th>
+                                                <th class="product-qty">Quantity</th>
+                                                <th class="product-price">Total Price</th>
                                                 <th class="product_buy">Buy Now</th>
                                                 <th class="product_remove">Remove</th>
                                             </tr>
@@ -62,7 +64,7 @@ include('includes/header.php');?>
                                                 
                                                 include('config.php');
                                                 $id=$_SESSION['username'];
-                                                $query = "SELECT nbook.image,nbook.newbook,nbook.Author,nbook.Sem,nbook.Price,mycart.cartid FROM nbook 
+                                                $query = "SELECT nbook.image,nbook.newbook,nbook.Author,nbook.Sem,nbook.Price,mycart.cartid,mycart.qty,mycart.price FROM nbook 
                                                 left join mycart on nbook.new_id =mycart.new_id
                                                 where username='$id'";
                                                 $query_run = mysqli_query($connection, $query);
@@ -70,6 +72,8 @@ include('includes/header.php');?>
                                                 {
                                                     while($row = mysqli_fetch_assoc($query_run))
                                                     {
+                                                         $car=$row['cartid'];
+                                                        
                                                        
                                                 ?>
                                             <tr>
@@ -83,8 +87,17 @@ include('includes/header.php');?>
                                                 <td class="product-author"><span class="amount"><?php echo $row['Author'];?></span></td>
                                                 <td class="product-price"><?php echo $row['Sem'];?></td>
                                                 <td class="product-price"><?php echo $row['Price'];?></td>
-                                            
-                                             <!-- <td class="product_remove">
+                                                <td class="product-qty">
+                                                    <div class="input-group-control">
+                                                        <form id="frm<?php echo $row['cartid']; ?>">
+                                                            <input type="hidden" name="cart_id" value="<?php echo $row['cartid'];;?>">
+                                                            <input type="number" class="quantity-input" name="qty" value="<?php echo $row['qty']; ?>" onchange="updcart(<?php echo $row['cartid'];;  ?>)" onkeyup="updcart(<?php echo $row['cartid'];;  ?>)" style="width: 100px;" max="5" min="1" size="2">
+                                                        
+                                                        </form>
+                                                    </div>
+                                                </td>
+                                                <td class="item-total"><?php echo $row['qty']*$row['price']; ?></td>
+                                                                    <!-- <td class="product_remove">
                                                     <a href="#">
                                                         <i class="pe-7s-trash" data-tippy="Remove" data-tippy-inertia="true" data-tippy-animation="shift-away" data-tippy-delay="50" data-tippy-arrow="true" data-tippy-theme="sharpborder"></i>
                                                     </a>
@@ -119,7 +132,7 @@ include('includes/header.php');?>
                                         </div>
                                     </div>
                                 </div>
-                            </form>
+                            <!-- </form> -->
                         </div>
                     </div>
                 </div>
@@ -166,9 +179,28 @@ include('includes/header.php');?>
 
     <!-- ************************* JS Files ************************* -->
 
-    
+ 
     <?php include('includes/scripts.php');?>
+    <script >
 
+function updcart(id){
+
+  $.ajax({
+  url:'updqty.php',
+  type:'POST',
+  data:$("#frm"+id).serialize(),
+  success:function(res){
+
+     $("#crt_table").html(res);
+
+  }
+
+
+});
+
+}
+
+</script>
 </body>
 
 

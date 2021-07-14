@@ -3,7 +3,18 @@ error_reporting(1);
 session_start();
 include('includes/header.php');
 ?>
+<style>
+ input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+ </style>
     <!-- Main Wrapper Start -->
     <div class="wrapper">
         <!-- Header Area Start -->
@@ -138,19 +149,28 @@ include('includes/header.php');
                                 </div>
                                 <div class="clearfix"></div>
                                 <p class="product-short-description mb--45 mb-sm--20"><?php echo $row['description'];?></p>
-                                <form action="#" class="form--action mb--30 mb-sm--20">
-                                    <div class="product-action flex-row align-items-center">
-                                        <!-- <div class="quantity">
-                                            <input type="number" class="quantity-input" name="qty" id="qty" value="1"
-                                                min="1">
-                                        </div> -->
-                                        <button type="button" class="btn btn-success btn-large">
-                                           <a href="addtocart.php?itemno=<?php echo $row['new_id'];?>">Add To Cart</a>
-                                        </button>
+                                <!-- <form action="#" class="form--action mb--30 mb-sm--20"> -->
+                                                                                    
+                                        <form action="addtocart.php?itemno=<?php echo $row['new_id'];?>" method="post">
+                                            <div class="product-action flex-row align-items-center">  
+                                                <input type="hidden" name="pid" value="<?php echo $row['new_id'];?>">
+                                                <!-- <p><input type="hidden" name="qty" value="1" min="1" style="width: 60px;"></p> -->
+                                                <div class="quantity">
+                                                    <input type="number" class="quantity-input" name="qty" id="qty" value="1"
+                                                        min="1">
+                                                </div>
+                                                <input type="hidden" name="price" value="<?php echo $row['Price']; ?>">
+                                                <div class="icons">
+                                                    <button type="submit" name="act" class="btn btn-success btn-large"  data-toggle="tooltip" data-placement="top" title="Add to cart">
+                                                    Add To Cart
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </form>
                                         <!-- <a href="wishlist.php"><i class="dl-icon-heart2"></i></a>
                                         <a href="compare.php"><i class="dl-icon-compare2"></i></a> -->
-                                    </div>
-                                </form>
+                                   
+                                <!-- </form> -->
                                 <div class="product-extra mb--40 mb-sm--20">
                                     <a href="#" class="font-size-12"><i class="fa fa-map-marker"></i>Find store near
                                         you</a>
@@ -245,11 +265,18 @@ include('includes/header.php');
                                                                 data-toggle="tooltip" data-placement="top" title="Quick view">
                                                                 <i class="dl-icon-view"></i>
                                                             </a>
-                                                            <a class="add_to_cart_btn action-btn" href="addtocart.php?itemno=<?php echo $row['new_id'];?>"
-                                                                data-toggle="tooltip" data-placement="top"
-                                                                title="Add to Cart">
-                                                                <i class="dl-icon-cart29"></i>
-                                                            </a>
+                                                            <form action="addtocart.php?itemno=<?php echo $row['new_id'];?>" method="post">
+                                                                <input type="hidden" name="pid" value="<?php echo $row['new_id'];?>">
+                                                                <p><input type="hidden" name="qty" value="1" min="1" style="width: 60px;"></p>
+                                                            
+                                                                <input type="hidden" name="price" value="<?php echo $row['Price']; ?>">
+                                                                <div class="icons">
+                                                                    <button type="submit" name="act" class="cart add_to_cart_btn action-btn"  data-toggle="tooltip" data-placement="top" title="Add to cart">
+                                                                        <i class="dl-icon-cart29"></i>
+                                                                    </button>
+                                                                </div>
+                                                            
+                                                            </form>
                                                             <a class="action-btn" href="checkout-direct.php?itemno=<?php echo $row['new_id'];?>"
                                                                 data-toggle="tooltip" data-placement="top" title="Order Now">
                                                                 <i class="fa fa-money"></i>

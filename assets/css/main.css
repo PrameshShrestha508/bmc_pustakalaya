@@ -155,15 +155,15 @@ figure {
   margin: 0;
 }
 
-input[type=number]::-webkit-inner-spin-button,
+/* input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
-}
-
+} */
+/* 
 input[type=number] {
   -moz-appearance: textfield;
-}
+} */
 
 input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
   color: #8a8a8a;
@@ -3118,7 +3118,7 @@ Bootstrap Dropdown
   border-radius: 0;
 }
 
-.variation-form .product-color-variations .swatch-wrapper, .special-offer-product__badge .discount-badge, .product-action a, .product-badge, .post-gallery .slick-btn, .round-nav .slick-btn, .action-btn i, .video-btn-3, .video-btn:after, .video-btn:before {
+.variation-form .product-color-variations .swatch-wrapper, .special-offer-product__badge .discount-badge, .product-action a,.product-action .cart, .product-badge, .post-gallery .slick-btn, .round-nav .slick-btn, .action-btn i, .video-btn-3, .video-btn:after, .video-btn:before {
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   -ms-border-radius: 50%;
@@ -3146,7 +3146,7 @@ Bootstrap Dropdown
   border-width: 1px;
 }
 
-.variation-form .product-color-variations .product-color-swatch-btn, .product-summary .product-action a i, .product-summary .product-action a, .product-stock, .blog-list .blog-info, .blog-style-2 .blog-info, .mobile-navigation .dl-menuwrapper, .newsletter-form--5 .newsletter-form__submit, .newsletter-form--5 .newsletter-form__input, .newsletter-form__input, .searchform-3 .searchform__input, .searchform-3, .form .forgot-pass, .form__fieldset {
+.variation-form .product-color-variations .product-color-swatch-btn, .product-summary .product-action a i,.product-action .cart i, .product-summary .product-action a, .product-stock, .blog-list .blog-info, .blog-style-2 .blog-info, .mobile-navigation .dl-menuwrapper, .newsletter-form--5 .newsletter-form__submit, .newsletter-form--5 .newsletter-form__input, .newsletter-form__input, .searchform-3 .searchform__input, .searchform-3, .form .forgot-pass, .form__fieldset {
   margin: 0;
 }
 
@@ -18822,14 +18822,39 @@ Bootstrap Dropdown
   -o-box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.2);
   box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.2);
 }
+.product-action .cart {
+  -webkit-transform: translate(50px, 0);
+  -moz-transform: translate(50px, 0);
+  -ms-transform: translate(50px, 0);
+  -o-transform: translate(50px, 0);
+  transform: translate(50px, 0);
+  opacity: 0;
+  transition-delay: 50ms;
+  margin: 5px;
+  -webkit-box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.2);
+  -ms-box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.2);
+  -o-box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.2);
+}
 .product-action a i:hover {
+  background-color: #cf987e;
+  color: #fff !important;
+}
+.product-action .cart i:hover {
   background-color: #cf987e;
   color: #fff !important;
 }
 .product-action a:nth-child(1) {
   transition-delay: 50ms;
 }
+.product-action .cart:nth-child(1) {
+  transition-delay: 50ms;
+}
 .product-action a:nth-child(2) {
+  transition-delay: 100ms;
+}
+.product-action .cart:nth-child(2) {
   transition-delay: 100ms;
 }
 .product-action a:nth-child(3) {
@@ -18844,6 +18869,17 @@ Bootstrap Dropdown
   -ms-box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0);
   -o-box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0);
   box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0);
+}
+.product-action.no-shadow .cart {
+  -webkit-box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0);
+  -moz-box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0);
+  -ms-box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0);
+  -o-box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0);
+  box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0);
+}
+.product-action .cart{
+  /* margin:0; */
+  padding:0;
 }
 .product-overlay {
   z-index: 3;
@@ -18880,6 +18916,11 @@ Bootstrap Dropdown
   margin-bottom: 1rem;
 }
 
+
+
+
+
+
 .airi-product {
   word-wrap: break-word;
   z-index: 1;
@@ -18891,6 +18932,14 @@ Bootstrap Dropdown
   float: right;
 }
 .airi-product:hover .product-action a {
+  -webkit-transform: translate(0, 0);
+  -moz-transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+  -o-transform: translate(0, 0);
+  transform: translate(0, 0);
+  opacity: 1;
+}
+.airi-product:hover .product-action .cart{
   -webkit-transform: translate(0, 0);
   -moz-transform: translate(0, 0);
   -ms-transform: translate(0, 0);

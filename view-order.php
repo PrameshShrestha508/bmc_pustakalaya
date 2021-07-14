@@ -11,6 +11,8 @@
                         $id=$_SESSION['username'];
                         $query = "SELECT * FROM orders where name='$id' AND order_id={$ii}";
                         $query_run = mysqli_query($connection, $query);
+
+                       
                         
                     ?>
 <title>ORDER RECEIPT</title>
@@ -66,7 +68,7 @@
 						</div>
 					</div>
 				</div>
-                <?php }}?>
+                <?php }} ?>
             </div>
 			
             <div>
@@ -95,7 +97,7 @@
                         {
                             while($row = mysqli_fetch_assoc($query_run))
                             {
-                              
+                                
                                 ?>
                         <tr>
                             <td class="col-md-9"> <strong>Bookname: </strong></td>
@@ -112,7 +114,7 @@
                         <tr>
                             <td class="text-right">
                             <p>
-                                <strong>Total Amount: </strong>
+                                <strong>Price(Per Unit): </strong>
                             </p>
                             <p>
                                 <strong>Quantity: </strong>
@@ -127,7 +129,7 @@
                                 <strong><i class="fa fa-inr"></i><?php echo $row['price'];?></strong>
                             </p>
                             <p>
-                                <strong><i class="fa fa-inr"></i><?php echo $row['quantity'];?></strong>
+                                <strong><i class="fa fa-inr"></i><?php echo $row['qty'];?></strong>
                             </p>
                             <p>
                                 <strong><i class="fa fa-inr"></i>FREE</strong>
@@ -145,9 +147,9 @@
                             <td class="text-right"><h2><strong>Total: </strong></h2></td>
                             <td class="text-left text-danger"><h2><strong><i class="fa fa-inr"></i> <?php 
                           
-                            $p=$row['price'];
-                            $q=$row['quantity'];
-                            echo 'Nrs. '.($p*$q);
+                            $price= $row['price'];
+                            $qty= $row['qty'];
+                            echo 'Nrs. '.($price*$qty);
                             ?></strong></h2></td>
                         </tr>
                         <?php }}?>

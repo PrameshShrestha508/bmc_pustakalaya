@@ -222,8 +222,8 @@ button a{
                         ?>
                 <div class="media-body ">
                     <h5 class="bold"><?php echo $row['bookname'];?></h5>
-                    <h5 class="text-dark"> Quantity:<?php echo $row['quantity'];?></h5>
-                    <h4 class="mt-3 mb-4 bold"> <span class="mt-5">&#x20B9;</span> <?php echo $row['price'];?> <span class="small text-dark"> via(<?php echo $row['paymentMethod'];?>) </span></h4>
+                    <h5 class="text-dark"> Quantity:<?php echo $row['qty'];?></h5>
+                    <h4 class="mt-3 mb-4 bold"> <span class="mt-5">&#x20B9;</span> <?php echo $row['price']*$row['qty'];?> <span class="small text-dark"> via(<?php echo $row['paymentMethod'];?>) </span></h4>
                     <p class="text-muted">Tracking Status on: <span class="Today">
                     <?php
                    $date = new DateTime("now", new DateTimeZone('Asia/Kathmandu') );

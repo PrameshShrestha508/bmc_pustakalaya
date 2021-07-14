@@ -96,19 +96,27 @@ include('includes/header.php');?>
                                                     </div>
                                                     <div class="airi-product-action">
                                                         <div class="product-action">
-                                                        <a class="quickview-btn action-btn" href="product-details.php?itemno=<?php echo $row['new_id']; ?>"
-                                                            data-toggle="tooltip" data-placement="top" title="Quick view">
-                                                            <i class="dl-icon-view"></i>
-                                                        </a>
-                                                            <a class="add_to_cart_btn action-btn" href="addtocart.php?itemno=<?php echo $row['new_id'];?>"
-                                                                data-toggle="tooltip" data-placement="top"
-                                                                title="Add to Cart">
-                                                                <i class="dl-icon-cart29"></i>
+                                                            <a class="quickview-btn action-btn" href="product-details.php?itemno=<?php echo $row['new_id']; ?>"
+                                                                data-toggle="tooltip" data-placement="top" title="Quick view">
+                                                                <i class="dl-icon-view"></i>
                                                             </a>
-                                                            <a class="action-btn" href="checkout-direct.php?itemno=<?php echo $row['new_id'];?>"
-                                                                data-toggle="tooltip" data-placement="top" title="Order Now">
-                                                                <i class="fa fa-money"></i>
-                                                            </a>
+                                                        
+                                                                <a class="action-btn" href="checkout-direct.php?itemno=<?php echo $row['new_id'];?>"
+                                                                    data-toggle="tooltip" data-placement="top" title="Order Now">
+                                                                    <i class="fa fa-money"></i>
+                                                                </a>
+                                                                <form action="addtocart.php?itemno=<?php echo $row['new_id'];?>" method="post">
+                                                                    <input type="hidden" name="pid" value="<?php echo $row['new_id'];?>">
+                                                                    <p><input type="hidden" name="qty" value="1" min="1" style="width: 60px;"></p>
+                                                                
+                                                                    <input type="hidden" name="price" value="<?php echo $row['Price']; ?>">
+                                                                    <div class="icons">
+                                                                        <button type="submit" name="act" class="cart add_to_cart_btn action-btn"  data-toggle="tooltip" data-placement="top" title="Add to cart">
+                                                                            <i class="dl-icon-cart29"></i>
+                                                                        </button>
+                                                                    </div>
+                                                                
+                                                                </form>
                                                             <!-- <a class="add_wishlist action-btn" href="wishlist.php"
                                                                 data-toggle="tooltip" data-placement="top"
                                                                 title="Add to Wishlist">
@@ -123,16 +131,22 @@ include('includes/header.php');?>
                                                     </div>
                                                 </figure>
                                                 <div class="product-info text-center">
+                                              
+                                                    
+                                                   
                                                     <h3 class="product-title">
                                                         <a href="product-details.php?itemno=<?php echo $row['new_id']; ?>"><?php echo $row['newbook'].' by';?></a>
                                                     </h3>
+                                                   
                                                     <h3 class="product-title">
                                                         <a href="product-details.php?itemno=<?php echo $row['new_id']; ?>"><?php echo $row['Author'];?></a>
                                                     </h3>
+                                               
                                                     <span class="product-price-wrapper">
-                                                        <span class="money text-white"><?php echo 'Nrs. '.$row['Price'];?></span>
-                                                        
-                                                    </span>
+                                                            <span class="money text-white"><?php echo 'Nrs. '.$row['Price'];?></span>
+                                                            
+                                                    </span>                                                    
+                                                                                
                                                 </div>
                                             </div>
                                         </div>

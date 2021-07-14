@@ -29,7 +29,7 @@ if(isset($_POST['submit']))
 
 
 
-	$query1 = "INSERT INTO orders(order_no,name,email,phone,address,bookname,Sem,price,quantity,date,paymentMethod,status) VALUES ('$order_no','$name','$email','$phone','$address','$bname','$sem','$price','$qty','$date','$paymentMethod','$status')";
+	$query1 = "INSERT INTO orders(order_no,name,email,phone,address,bookname,price,qty,Sem,date,paymentMethod,status) VALUES ('$order_no','$name','$email','$phone','$address','$bname','$price','$qty','$sem','$date','$paymentMethod','$status')";
             $query_run1 = mysqli_query($connection, $query1);
 			
 			if($query_run1){
@@ -81,7 +81,7 @@ if(isset($_POST['submit']))
                                             <?php
                                                 include('config.php');
                                                 $ii=$_GET['itemno'];
-                                                $query = "SELECT nbook.newbook,nbook.Sem,nbook.Price,mycart.cartid FROM mycart 
+                                                $query = "SELECT nbook.newbook,nbook.Sem,nbook.Price,mycart.cartid,mycart.qty FROM mycart 
                                                 left join nbook on nbook.new_id=mycart.new_id where mycart.cartid={$ii}";
                                                
                                                 $query_run = mysqli_query($connection, $query);
@@ -142,24 +142,12 @@ if(isset($_POST['submit']))
                                                     class="required">*</span></label>
                                             <input type="text" name="sem" id="billing_semester"
                                                 class="form__input form__input--2" value="<?php echo $row['Sem'];?>" readonly>
-                                        </div>
-                                    </div>
-                                    <div class="form-row mb--30">
-                                        <div class="form__group col-12">
-                                            <label for="billing_price" class="form__label form__label--2">Price(per unit)<span
-                                                    class="required">*</span></label>
-                                            <input type="text" name="price" id="billing_price"
+                                            <input type="hidden" name="qty" id="billing_qty"
+                                            class="form__input form__input--2" value="<?php echo $row['qty'];?>" readonly>
+                                            <input type="hidden" name="price" id="billing_price"
                                                 class="form__input form__input--2" value="<?php echo $row['Price'];?>" readonly>
                                         </div>
-                                    </div>
-                                    <div class="form-row mb--30">
-                                        <div class="form__group col-12">
-                                            <label for="billing_quantity" class="form__label form__label--2">Quantity <span
-                                                    class="required">*</span></label>
-                                            <input type="text" name="qty" id="billing_qty"
-                                                class="form__input form__input--2">
-                                        </div>
-                                    </div>
+                                    </div>                               
                                     
                                     <div class="form-row mb--30">
                                         <div class="form__group col-12">

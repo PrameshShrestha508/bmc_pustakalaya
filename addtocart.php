@@ -2,6 +2,8 @@
 session_start();
 $id=$_SESSION['username'];
 include("config.php");
+$price=$_POST['price'];
+$qty=$_POST['qty'];
 $itemno=$_REQUEST['itemno'];
 $sql="select * from mycart where new_id='$itemno' && username='$id'";
 $query_run = mysqli_query($connection, $sql);
@@ -18,7 +20,7 @@ if($cid==$itemno){
 }else if(!$_SESSION['username']=='')
 {
 
- if(mysqli_query($connection,"insert into mycart(username,new_id) values('$id','$itemno')"))
+ if(mysqli_query($connection,"insert into mycart(username,new_id,qty,price) values('$id','$itemno','$qty','$price')"))
     {
 	   header("location:cart.php");
     }

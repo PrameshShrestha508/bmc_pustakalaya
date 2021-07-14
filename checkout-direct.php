@@ -30,7 +30,8 @@ if(isset($_POST['submit']))
 
 
 
-	$query1 = "INSERT INTO orders(order_no,name,email,phone,address,bookname,Sem,price,quantity,date,paymentMethod,status) VALUES ('$order_no','$name','$email','$phone','$address','$bname','$sem','$price','$qty','$date','$paymentMethod','$status')";
+	
+	$query1 = "INSERT INTO orders(order_no,name,email,phone,address,bookname,price,qty,Sem,date,paymentMethod,status) VALUES ('$order_no','$name','$email','$phone','$address','$bname','$price','$qty','$sem','$date','$paymentMethod','$status')";
             $query_run1 = mysqli_query($connection, $query1);
 			
 			
@@ -158,8 +159,8 @@ if(isset($_POST['submit']))
                                         <div class="form__group col-12">
                                             <label for="billing_quantity" class="form__label form__label--2">Quantity <span
                                                     class="required">*</span></label>
-                                            <input type="text" name="qty" id="billing_qty"
-                                                class="form__input form__input--2">
+                                            <input type="number" name="qty" id="billing_qty" value="1"
+                                                class="form__input form__input--2" max="5" min="1">
                                         </div>
                                     </div>
                                     
