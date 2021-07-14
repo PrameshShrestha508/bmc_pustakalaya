@@ -33,7 +33,7 @@ if(isset($_POST['submit']))
             $query_run1 = mysqli_query($connection, $query1);
 			
 			if($query_run1){
-				echo "<script>window.location.href='my-account.php';</script>";
+				echo "<script>window.location.href='thankyou.php';</script>";
 				exit;
 			}else{
 				mysqli_error($connection);

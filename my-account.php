@@ -9,69 +9,8 @@ if(!$_SESSION['username'])
     </script>';
 }
 include('includes/header.php');?>
-<style>
-.table-content {
-padding:15px;
-border:3px solid #dee2e6;
-width: fit-content
-}
-.table-content{
-  white-space: nowrap;
-  font-size: 14px;
-  
-}
 
-.table-content table th,
-.table-content .table th {
-  padding: 10px;
-  font-weight: 600;
-  background-color: #ee3231;
-  border-color: #ccc;
-  border-bottom: 0;
-  color: #fff;
-}
-
-.table-content table td,
-.table-content .table td {
-  padding: 10px;
-  padding:15px 0;
-  vertical-align: middle;
-  border:1px solid #dee2e6;
-  font-size:15px;
-  text-align:center;
-}
-
-.table-responsive {
-    display: block;
-    width: 100%;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    -ms-overflow-style: -ms-autohiding-scrollbar;
-}
-
-
-img {
-  border-radius: 50%;
-}
-.texty{
-    color:#e96125
-}
-.my_file{
-    background-color:blue;
-    color:white;
-    padding:5px;
-    border-radius:5px;
-}
-#submit{
-    margin:10px 0 10px 0;
-    background-color:blue;
-    color:white;
-    padding:7px;
-    border-radius:5px; 
-}
-
-
-</style>
+<link rel="stylesheet" href="assets/css/myaccount.css">
     <!-- Main Wrapper Start -->
     <div class="wrapper">
         <!-- Header Area Start -->
@@ -99,29 +38,7 @@ img {
             <div class="page-content-inner">
             
                 <div class="container">
-                    <?php
-                        
-                        include("config.php");
-                        $id=$_SESSION['username'];
-                        $query = "SELECT * FROM img_upload where uname='$id'";
-                        $query_run = mysqli_query($connection, $query);
-                        if(mysqli_num_rows($query_run) > 0)        
-                        {
-                            while($row = mysqli_fetch_assoc($query_run))
-                            {
-                    ?>
-                    
-                    <img src="<?php echo 'assets/img/logo/'.$row['image']; ?>" height="100px" width="100px" alt="Profile">
-                    <p class="texty">Hello, <strong><?php echo $_SESSION['username'];?></p>
-                   <?php }} ?>
-                    <p><strong>Upload User Profile</strong></p>
-                    <form action="img-upload.php" method="post" enctype="multipart/form-data">
-                        <input type="file" name="fileToUpload" class="my_file" required><br>
-              
-                        <input type="submit" name="send" value="upload" id="submit">
-                    </form>
-                    
-                    <div class="row pt--80 pt-md--60 pt-sm--40 pb--80 pb-md--60 pb-sm--40">
+                    <div class="row pt--30 pt-md--60 pt-sm--40 pb--80 pb-md--60 pb-sm--40">
                         <div class="col-12">
                             
                             <div class="user-dashboard-tab flex-column flex-md-row">
@@ -141,12 +58,69 @@ img {
                                 </div>
                                 <div class="user-dashboard-tab__content tab-content">
                                     <div class="tab-pane fade show active" id="dashboard">
-                                        <p>Hello <strong><?php echo $_SESSION['username'];?></strong> (not <strong><?php echo $_SESSION['username'];?></strong>? <a
-                                                href="logout.php">Log out</a>)</p>
-                                        <p>From your account dashboard. you can easily check &amp; view your <a
-                                                href="#">recent orders</a>, manage your <a href="#">shipping and billing
-                                                addresses</a> and <a href="#">edit your password and account details</a>.
-                                        </p>
+                                    <div class="profile-wrapper bg-white mt-sm-5">
+                                        <h4 class="pb-4 border-bottom">Account settings</h4>
+                                            <?php
+                                                    
+                                                    include("config.php");
+                                                    $id=$_SESSION['username'];
+                                                    $query = "SELECT * FROM img_upload where uname='$id'";
+                                                    $query_run = mysqli_query($connection, $query);
+                                                    if(mysqli_num_rows($query_run) > 0)        
+                                                    {
+                                                        while($row = mysqli_fetch_assoc($query_run))
+                                                        {
+                                                ?>
+                                        <div class="d-flex align-items-start py-3 border-bottom"> <div class="image"><img src="<?php echo 'assets/img/logo/'.$row['image']; ?>" class="img"  alt="Profile"></div>
+                                            <div class="pl-sm-4 pl-2" id="img-section"> <b>Profile Photo(<span class="texty">Hello,<?php echo $_SESSION['username'];?></span>)</b>
+                                            <?php }} ?>
+                                                <form action="img-upload.php" method="post" enctype="multipart/form-data">
+                                                    <input type="file" name="fileToUpload" class="my_file" required><br>
+                                        
+                                                    <input type="submit" name="send" value="upload" id="submit">
+                                                </form>
+                                            </div>
+                                        </div>
+                                        <form action="myaccount-update.php" method="POST">
+                                            <div class="py-2">
+                                                <?php
+                                                    
+                                                    include('config.php');
+                                                    $id=$_SESSION['username'];
+                                                    $query1 = "SELECT * from users where name='$id'";
+                                                
+                                                    $query_run1 = mysqli_query($connection, $query1);
+                                                
+                                                    if(mysqli_num_rows($query_run1) > 0)        
+                                                    {
+                                                        while($row1 = mysqli_fetch_assoc($query_run1))
+                                                        {
+                                                        
+                                                        
+                                                    ?>
+                                                <div class="row py-2">
+                                                    <div class="col-md-12"> <label for="firstname">First Name</label> <input type="text" class="bg-light form-control" name="uname" value="<?php echo $_SESSION['username']; ?>" readonly> </div>
+                                                    
+                                                </div>
+                                                <div class="row py-2">
+                                                    <div class="col-md-6"> <label for="email">Email Address</label> <input type="text" class="bg-light form-control" name="edit_email" placeholder="Enter Email" value="<?php echo $row1['email'];?>"> </div>
+                                                    <div class="col-md-6 pt-md-0 pt-3"> <label for="phone">Phone Number</label> <input type="tel" class="bg-light form-control" name="edit_phone" placeholder="Ph NO" value="<?php echo $row1['phone'];?>"> </div>
+                                                </div>
+                                                <div class="row py-2">
+                                                    <div class="col-md-12"> <label for="address">Address</label> <input type="text" class="bg-light form-control" name="edit_address" value="<?php echo $row1['address'];?>"> </div>
+                                                    
+                                                </div>
+                                                <div class="py-3 pb-4 border-bottom"> <button type="submit" class="btn btn-primary mr-3" name="updatebtn">Save Changes</button>  </div>
+                                                <div class="d-sm-flex align-items-center pt-3" id="deactivate">
+                                                    <div> <b>LOG-OUT FROM ACCOUNT</b>
+                                                    
+                                                    </div>
+                                                    <div class="ml-auto"> <button class="btn bg-danger"><a href="logout.php">Logout</a></button> </div>
+                                                </div>
+                                                <?php }} ?>
+                                            </div>
+                                        </form>
+                                    </div>
                                     </div>
                                     <div class="tab-pane fade" id="orders">
                                         <div class="message-box mb--30 d-none">

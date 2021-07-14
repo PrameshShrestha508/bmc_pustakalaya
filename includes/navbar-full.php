@@ -79,8 +79,18 @@
                                     </li>
                                   
                                     <li class="header-toolbar__item user-info-menu-btn">
-                                        <a href="#">
+                                        <a href="#" class="mini-cart-btn">
                                             <i class="fa fa-user-circle-o"></i>
+                                            <?php 
+                                              error_reporting(1);
+                                              session_start();
+                                                if(!$_SESSION["username"]=='')
+                                                {
+                                                    echo'<sup class="mini-cart-count pl-2 pr-2">';
+                                                    echo $_SESSION["HI"]="HI";
+                                                    echo'</sup>';
+                                                }
+                                            ?>
                                         </a>
                                         <ul class="user-info-menu">
                                             <li>
@@ -95,6 +105,13 @@
                                             <li>
                                                 <a href="login-register.php">Login/Register</a>
                                             </li>
+                                            <?php 
+                                              if(!$_SESSION["username"]==''){
+                                                  echo' <li>
+                                                  <a href="logout.php">Logout</a>
+                                              </li>';
+                                              }
+                                            ?>
                                            
                                             <!-- <li>
                                                 <a href="checkout.php">Check Out</a>
@@ -160,10 +177,21 @@
                                 </a>
                             </div>
                             <div class="col-8">
+                                              
                                 <ul class="header-toolbar text-right">
                                     <li class="header-toolbar__item user-info-menu-btn">
-                                        <a href="#">
+                                        <a href="#" class="mini-cart-btn">
                                             <i class="fa fa-user-circle-o"></i>
+                                            <?php 
+                                              error_reporting(1);
+                                              session_start();
+                                                if(!$_SESSION["username"]=='')
+                                                {
+                                                    echo'<sup class="mini-cart-count pl-2 pr-2">';
+                                                    echo $_SESSION["HI"]="HI";
+                                                    echo'</sup>';
+                                                }
+                                            ?>
                                         </a>
                                         <ul class="user-info-menu">
                                             <li>
@@ -172,18 +200,21 @@
                                             <li>
                                                 <a href="cart.php">Shopping Cart</a>
                                             </li>
-                                            <li>
-                                                <a href="checkout.php">Check Out</a>
-                                            </li>
-                                            <li>
-                                                <a href="wishlist.php">Wishlist</a>
-                                            </li>
+                                           
+                                           
                                             <li>
                                                 <a href="order-tracking.php">Order tracking</a>
                                             </li>
                                             <li>
-                                                <a href="compare.php">compare</a>
+                                                <a href="login-register.php">Login/Register</a>
                                             </li>
+                                            <?php 
+                                              if(!$_SESSION["username"]==''){
+                                                  echo' <li>
+                                                  <a href="logout.php">Logout</a>
+                                              </li>';
+                                              }
+                                            ?>
                                         </ul>
                                     </li>
                                     <li class="header-toolbar__item">
