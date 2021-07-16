@@ -8,8 +8,7 @@
                             <div class="footer-widget">
                                 <div class="textwidget">
                                     <img src="assets/img/logo/logo3.png" alt="Logo" class="mb--10">
-                                    <p class="font-size-16 font-2 mb--20">Integer ut ligula quis lectus fringilla
-                                        elementum porttitor sed est. Duis fringilla efficitur ligula sed lobortis.</p>
+                                    <p class="font-size-16 font-2 mb--20">BMC Pustakalaya, an online bookstore.</p>
                                     <!-- Social Icons Start Here -->
                                     <ul class="social">
                                         <li class="social__item">
@@ -42,35 +41,26 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-2 col-md-4 mb-md--30">
+                        <div class="col-lg-3 col-md-4 mb-md--30">
                             <div class="footer-widget">
                                 <h3 class="widget-title">Company</h3>
                                 <ul class="widget-menu">
                                     <li><a href="about-us.php">About Us</a></li>
-                                    <li><a href="#">Our Services</a></li>
-                                    <li><a href="#">Affiliate Program</a></li>
-                                    <li><a href="#">Work for Airi</a></li>
+                                    <li><a href="team.php">Our Team</a></li>
+                                    <li><a href="contact-us.php">Contact Us</a></li>
+                                   
                                 </ul>
                             </div>
                         </div>
-                        <div class="col-lg-2 col-md-4 mb-sm--30">
+                       
+                        <div class="col-lg-3 col-md-4 mb-sm--30">
                             <div class="footer-widget">
-                                <h3 class="widget-title">USEFUL LINKS</h3>
+                                <h3 class="widget-title">Books</h3>
                                 <ul class="widget-menu">
-                                    <li><a href="shop-collections.php">The Collections</a></li>
-                                    <li><a href="#">Size Guide</a></li>
-                                    <li><a href="#">Return Policiy</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-lg-2 col-md-4 mb-sm--30">
-                            <div class="footer-widget">
-                                <h3 class="widget-title">SHOPPING</h3>
-                                <ul class="widget-menu">
-                                    <li><a href="shop-instagram.php">Look Book</a></li>
-                                    <li><a href="shop-sidebar.php">Shop Sidebar</a></li>
-                                    <li><a href="shop-fullwidth.php">Shop Fullwidth</a></li>
-                                    <li><a href="shop-no-gutter.php">Man & Woman</a></li>
+                                    <li><a href="newbook.php">New Book</a></li>
+                                    <li><a href="oldbook.php">Old Book</a></li>
+                                    <li><a href="rentbook.php">Rent Book</a></li>
+                                   
                                 </ul>
                             </div>
                         </div>
@@ -84,11 +74,11 @@
                                     </li>
                                     <li class="contact-info__item">
                                         <i class="fa fa-envelope"></i>
-                                        <span><a href="mailto:demo@email.com" class="contact-info__link">demo@email.com</a></span>
+                                        <span><a href="mailto:demo@email.com" class="contact-info__link">bmcpustakalaya@email.com</a></span>
                                     </li>
                                     <li class="contact-info__item">
                                         <i class="fa fa-map-marker"></i>
-                                        <span>Example Address</span>
+                                        <span>Butwal Rupandehi Nepal</span>
                                     </li>
                                 </ul>
                                 <div class="textwidget">
@@ -105,7 +95,7 @@
                         <div class="col-lg-3 col-md-6 mb-md--10">
                             <div class="method-box">
                                 <h4>FREESHIPPING WORLD WIDE</h4>
-                                <p>Freeship over oder $100</p>
+                                <p>Freeship over order $100</p>
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-6 mb-md--10">
@@ -117,7 +107,7 @@
                         <div class="col-lg-3 col-md-6 mb-sm--10">
                             <div class="method-box">
                                 <h4>PROFESSIONAL SUPPORT 24/7</h4>
-                                <p>demo@example.com</p>
+                                <p>Bmcpustakalaya@gmail.com</p>
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-6">
@@ -133,7 +123,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-12 text-center">
-                            <p class="copyright-text">&copy; Pustakalya 2021 MADE WITH <i class="fa fa-heart"></i> BY Pramesh</p>
+                            <p class="copyright-text">&copy; BMC Pustakalya 2021 MADE WITH <i class="fa fa-heart"></i></p>
                         </div>
                     </div>
                 </div>

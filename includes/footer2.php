@@ -6,7 +6,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-12 text-center">
-                            <p class="copyright-text">&copy; Pustakalya 2021 MADE WITH <i class="fa fa-heart"></i> BY Pramesh</p>
+                            <p class="copyright-text">&copy; Pustakalya 2021 MADE WITH <i class="fa fa-heart"></i></p>
                         </div>
                     </div>
                 </div>

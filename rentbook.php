@@ -61,7 +61,7 @@ include('includes/header.php');?>
                                                 </p>
                                             </div>
                                         </div>
-                                        <div class="col-md-6">     
+                                        <!-- <div class="col-md-6">     
                                                 <div class="product-ordering">
                                                     <a href="#" class="product-ordering__btn shop-toolbar__btn">
                                                         <span>Choose Category Wise</span>
@@ -78,7 +78,7 @@ include('includes/header.php');?>
                                                         <li><a href="eight-sem.php">Eight Semester</a></li>
                                                     </ul>
                                                 </div>  
-                                         </div>
+                                         </div> -->
                                     </div>
                                 </div>
                             </div>

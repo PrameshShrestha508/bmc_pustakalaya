@@ -2,11 +2,12 @@
 session_start();
 error_reporting(1);
 include('includes/header.php');?>
+
     <!-- Main Wrapper Start -->
     <div class="wrapper">
         <!-- Header Area Start -->
         <?php include('includes/navbar-full.php');?>
-        <!-- Mobile Header area End -->
+        <!--  Header area End -->
 
         <!-- Breadcrumb area Start -->
         <div class="breadcrumb-area bg--white-6 pt--60 pb--70 pt-lg--40 pb-lg--50 pt-md--30 pb-md--40">
@@ -16,7 +17,7 @@ include('includes/header.php');?>
                         <h1 class="page-title">New Book</h1>
                         <ul class="breadcrumb justify-content-center">
                             <li><a href="index.php">Home</a></li>
-                            <li class="current"><span>newbook</span></li>
+                            <li class="current"><span>New Book</span></li>
                         </ul>
                     </div>
                 </div>
@@ -25,22 +26,11 @@ include('includes/header.php');?>
         <!-- Breadcrumb area End -->
 
         <!-- Main Content Wrapper Start -->
-        <div id="content" class="main-content-wrapper mt-5">
-            <div class="shop-page-wrapper">
+        <div id="content" class="main-content-wrapper">
+            <div class="page-content-inner enable-page-sidebar">
                 <div class="container-fluid">
-                    <div class="row shop-fullwidth pt--45 pt-md--35 pt-sm--20 pb--60 pb-md--50 pb-sm--40">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <form action="search-new.php" method="post">
-                                    <div class="input-group">
-                                        <input class="form-control text-center" placeholder="Search By Bookname/Author/Publicationhouse" name="search"  type="text">
-                                    </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12">
+                    <div class="row shop-sidebar pt--45 pt-md--35 pt-sm--20 pb--60 pb-md--50 pb-sm--40">
+                        <div class="col-lg-9 order-lg-2" id="main-content">
                             <div class="shop-toolbar">
                                 <div class="shop-toolbar__inner">
                                     <div class="row align-items-center">
@@ -48,24 +38,29 @@ include('includes/header.php');?>
                                             <div class="shop-toolbar__left">
                                                 <p class="product-pages text-white p-3 bg-primary font-size-15">Total New Books:
 
-                                                <span>
+                                                    <span>
 
-                                                <?php 
-                                                include('config.php');
-                                                $query = "SELECT new_id FROM nbook  ORDER BY new_id";  
-                                                $query_run = mysqli_query($connection, $query);
-                                                $row = mysqli_num_rows($query_run);
-                                                echo $row;
-                                                ?>
-                                                </span>
+                                                    <?php 
+                                                    include('config.php');
+                                                    $query = "SELECT new_id FROM nbook  ORDER BY new_id";  
+                                                    $query_run = mysqli_query($connection, $query);
+                                                    $row = mysqli_num_rows($query_run);
+                                                    echo $row;
+                                                    ?>
+                                                    </span>
                                                 </p>
                                             </div>
+                                        </div> 
+                                        
+                                        <div class="col-md-6">
+                                            <!-- <div class="shop-toolbar__right"> -->
+                                                <form action="search-new.php" method="post">
+                                                    <div class="input-group">
+                                                        <input class="form-control text-center" placeholder="Search By Bookname/Author/Publicationhouse" name="search"  type="text">
+                                                    </div>
+                                                </form>
+                                            <!-- </div> -->
                                         </div>
-                                        <div class="col-md-6">     
-                                                <!-- category box -->
-                                                <?php include('includes/category.php');?>
-                                                <!-- category box ends-->
-                                         </div>
                                     </div>
                                 </div>
                             </div>
@@ -73,7 +68,7 @@ include('includes/header.php');?>
                                 <div class="row grid-space-20 xxl-block-grid-5">
                                             <?php
                                                 include('config.php');
-                                                $query = "SELECT * FROM nbook  LIMIT 8";
+                                                $query = "SELECT * FROM nbook  LIMIT 6";
                                                 $query_run = mysqli_query($connection, $query);
                                                 if(mysqli_num_rows($query_run) > 0)        
                                                 {
@@ -82,7 +77,7 @@ include('includes/header.php');?>
                                                         $i=$row['new_id'];
                                             ?>
 
-                                    <div class="col-lg-3 col-sm-6 mb--40 mb-md--30">
+                                    <div class="col-lg-4 col-sm-6 mb--40 mb-md--30">
                                         <div class="airi-product">
                                             <div class="product-inner">
                                                 <figure class="product-image">
@@ -101,10 +96,7 @@ include('includes/header.php');?>
                                                                 <i class="dl-icon-view"></i>
                                                             </a>
                                                         
-                                                                <a class="action-btn" href="checkout-direct.php?itemno=<?php echo $row['new_id'];?>"
-                                                                    data-toggle="tooltip" data-placement="top" title="Order Now">
-                                                                    <i class="fa fa-money"></i>
-                                                                </a>
+                                                               
                                                                 <form action="addtocart.php?itemno=<?php echo $row['new_id'];?>" method="post">
                                                                     <input type="hidden" name="pid" value="<?php echo $row['new_id'];?>">
                                                                     <p><input type="hidden" name="qty" value="1" min="1" style="width: 60px;"></p>
@@ -117,6 +109,10 @@ include('includes/header.php');?>
                                                                     </div>
                                                                 
                                                                 </form>
+                                                                <a class="action-btn" href="checkout-direct.php?itemno=<?php echo $row['new_id'];?>"
+                                                                    data-toggle="tooltip" data-placement="top" title="Order Now">
+                                                                    <i class="fa fa-money"></i>
+                                                                </a>
                                                             <!-- <a class="add_wishlist action-btn" href="wishlist.php"
                                                                 data-toggle="tooltip" data-placement="top"
                                                                 title="Add to Wishlist">
@@ -158,10 +154,22 @@ include('includes/header.php');?>
 
                                 </div>
                             </div>
-                         
 
-                           
+                            <!-- <nav class="pagination-wrap">
+                                <ul class="pagination">
+                                    <li><a href="shop-sidebar.html" class="prev page-number"><i
+                                                class="fa fa-angle-double-left"></i></a></li>
+                                    <li><span class="current page-number">1</span></li>
+                                    <li><a href="shop-sidebar.html" class="page-number">2</a></li>
+                                    <li><a href="shop-sidebar.html" class="page-number">3</a></li>
+                                    <li><a href="shop-sidebar.html" class="next page-number"><i
+                                                class="fa fa-angle-double-right"></i></a></li>
+                                </ul>
+                            </nav> -->
                         </div>
+                         <!-- Category Start -->
+                                <?php include('includes/category2.php');?>
+                        <!-- Catgeory End -->
                     </div>
                 </div>
             </div>
@@ -169,8 +177,8 @@ include('includes/header.php');?>
         <!-- Main Content Wrapper Start -->
 
 
-        <!-- Footer Start -->
-        <?php include('includes/footer2.php');?>
+           <!-- Footer Start -->
+           <?php include('includes/footer2.php');?>
         <!-- Footer End -->
 
 

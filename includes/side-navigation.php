@@ -5,8 +5,8 @@
                     <div class="widget">
                         <ul class="sidenav-menu">
                             <li><a href="about-us.php">About BMC  Pustakalaya</a></li>
-                            <li><a href="about-us.php">Help Center</a></li>
-                            <li><a href="newbook.php">Portfolio</a></li>
+                            <li><a href="contact-us.php">Contact Us</a></li>
+                            <!-- <li><a href="newbook.php">Portfolio</a></li> -->
                         </ul>
                     </div>
                     <div class="widget pt--30 pr--20">
@@ -14,16 +14,15 @@
                             <p>
                                 <img src="assets/img/others/payments.png" alt="payment">
                             </p>
-                            <p>Pellentesque mollis nec orci id tincidunt. Sed mollis risus eu nisi aliquet, sit amet
-                                fermentum justo dapibus.</p>
+                            <p>BMC Pustakalaya is an online bookstore with a mission to financially support local, independent bookstores.</p>
                         </div>
                     </div>
                     <div class="widget">
                         <div class="text-widget">
                             <p>
                                 <a href="#">(+612) 2531 5600</a>
-                                <a href="mailto:demo@example.com">demo@example.com</a>
-                                PO Box 1622 Colins Street West
+                                <a href="mailto:demo@example.com">bmcpustakalaya@example.com</a>
+                                Butwal Rupandehi Nepal
                             </p>
                         </div>
                     </div>
@@ -69,7 +68,7 @@
                     </div>
                     <div class="widget">
                         <div class="text-widget">
-                            <p class="copyright-text">&copy; AIRI 2021 MADE WITH <i class="fa fa-heart"></i> BY HASTHEMES</p>
+                            <p class="copyright-text">&copy; BMC Pustakalaya 2021 MADE WITH <i class="fa fa-heart"></i></p>
                         </div>
                     </div>
                 </div>
