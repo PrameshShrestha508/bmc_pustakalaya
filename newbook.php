@@ -68,7 +68,15 @@ include('includes/header.php');?>
                                 <div class="row grid-space-20 xxl-block-grid-5">
                                             <?php
                                                 include('config.php');
-                                                $query = "SELECT * FROM nbook  LIMIT 6";
+                                                $limit =6;  
+                                                if (isset($_GET["page"])) {
+                                                    $page  = $_GET["page"]; 
+                                                    } 
+                                                    else{ 
+                                                    $page=1;
+                                                    };  
+                                                $start_from = ($page-1) * $limit;
+                                                $query = "SELECT * FROM nbook  ORDER BY new_id ASC LIMIT $start_from, $limit";
                                                 $query_run = mysqli_query($connection, $query);
                                                 if(mysqli_num_rows($query_run) > 0)        
                                                 {
@@ -154,18 +162,38 @@ include('includes/header.php');?>
 
                                 </div>
                             </div>
+                            <nav class="pagination-wrap">
+                                <?php  
 
-                            <!-- <nav class="pagination-wrap">
-                                <ul class="pagination">
-                                    <li><a href="shop-sidebar.html" class="prev page-number"><i
-                                                class="fa fa-angle-double-left"></i></a></li>
-                                    <li><span class="current page-number">1</span></li>
-                                    <li><a href="shop-sidebar.html" class="page-number">2</a></li>
-                                    <li><a href="shop-sidebar.html" class="page-number">3</a></li>
-                                    <li><a href="shop-sidebar.html" class="next page-number"><i
-                                                class="fa fa-angle-double-right"></i></a></li>
-                                </ul>
-                            </nav> -->
+                                $result_db = mysqli_query($connection,"SELECT COUNT(new_id) FROM nbook"); 
+                                $row_db = mysqli_fetch_row($result_db);  
+                                $total_records = $row_db[0];  
+                                $total_pages = ceil($total_records / $limit); 
+                                /* echo  $total_pages; */
+                                $pagLink = "<ul class='pagination'>";
+                                    if($page>1){
+                                        $pagLink .= '<li><a href="newbook.php?page='.($page - 1).'" class="bg-primary text-white prev page-number">Previous</a></li>';
+                                    }
+                                    for ($i=1; $i<=$total_pages; $i++) {
+                                        // $current=$_GET['page'];
+                                        if($i==$page){
+                                            $active="active";
+                                        }else{
+                                            $active="";
+                                        }
+                                        $pagLink .= "<li><a class='page-number bg-primary text-white' href='newbook.php?page=".$i."'>".$i."</a></li>";	
+                                    }
+                                   
+                                    if($total_pages>$page){
+                                        $pagLink .= '<li><a href="newbook.php?page='.($page + 1).'" class="bg-primary text-white next page-number">Next</a></li>';
+                                    }
+                                    echo $pagLink. "</ul>";  
+                                
+
+
+                                ?>
+                            </nav>
+                        
                         </div>
                          <!-- Category Start -->
                                 <?php include('includes/category2.php');?>
