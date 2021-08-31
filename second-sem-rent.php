@@ -11,15 +11,17 @@ include('includes/header.php');?>
 
         <!-- Breadcrumb area Start -->
         <div class="breadcrumb-area bg--white-6 pt--60 pb--70 pt-lg--40 pb-lg--50 pt-md--30 pb-md--40">
+            <div class="container-fluid">
                 <div class="row">
                     <div class="col-12 text-center">
-                        <h1 class="page-title">Rent Book</h1>
+                        <h1 class="page-title">Second Semester</h1>
                         <ul class="breadcrumb justify-content-center">
                             <li><a href="index.php">Home</a></li>
-                            <li class="current"><span>rentbook</span></li>
+                            <li class="current"><span>Second-Sem</span></li>
                         </ul>
                     </div>
                 </div>
+            </div>
         </div>
         <!-- Breadcrumb area End -->
 
@@ -34,16 +36,16 @@ include('includes/header.php');?>
                                     <div class="row align-items-center">
                                         <div class="col-md-6 text-md-left text-center mb-sm--20">
                                             <div class="shop-toolbar__left">
-                                                <p class="product-pages text-white p-3 bg-primary font-size-15">Total Rent Books:
+                                                <p class="product-pages text-white p-3 bg-primary font-size-15">Total Second Sem Books:
 
                                                     <span>
 
                                                     <?php 
-                                                        include('config.php');
-                                                        $query = "SELECT rent_id FROM rbook  ORDER BY rent_id";  
-                                                        $query_run = mysqli_query($connection, $query);
-                                                        $row = mysqli_num_rows($query_run);
-                                                        echo $row;
+                                                    include('config.php');
+                                                    $query = "SELECT rent_id FROM rbook  where Sem='2' ORDER BY rent_id";  
+                                                    $query_run = mysqli_query($connection, $query);
+                                                    $row = mysqli_num_rows($query_run);
+                                                    echo $row;
                                                     ?>
                                                     </span>
                                                 </p>
@@ -66,15 +68,7 @@ include('includes/header.php');?>
                                 <div class="row grid-space-20 xxl-block-grid-5">
                                             <?php
                                                 include('config.php');
-                                                $limit =6;  
-                                                if (isset($_GET["page"])) {
-                                                    $page  = $_GET["page"]; 
-                                                    } 
-                                                    else{ 
-                                                    $page=1;
-                                                    };  
-                                                $start_from = ($page-1) * $limit;
-                                                $query = "SELECT * FROM rbook  ORDER BY rent_id ASC LIMIT $start_from, $limit";
+                                                $query = "SELECT * FROM rbook where Sem='2'  LIMIT 6";
                                                 $query_run = mysqli_query($connection, $query);
                                                 if(mysqli_num_rows($query_run) > 0)        
                                                 {
@@ -126,11 +120,11 @@ include('includes/header.php');?>
                                                     
                                                    
                                                     <h3 class="product-title">
-                                                        <a href="product-details.php?itemno=<?php echo $row['rent_id']; ?>"><?php echo $row['rentbook'].' by';?></a>
+                                                        <a href="product-details-rent.php?itemno=<?php echo $row['rent_id']; ?>"><?php echo $row['newbook'].' by';?></a>
                                                     </h3>
                                                    
                                                     <h3 class="product-title">
-                                                        <a href="product-details.php?itemno=<?php echo $row['rent_id']; ?>"><?php echo $row['Author'];?></a>
+                                                        <a href="product-details-rent.php?itemno=<?php echo $row['rent_id']; ?>"><?php echo $row['Author'];?></a>
                                                     </h3>
                                                
                                                     <span class="product-price-wrapper">
@@ -149,38 +143,18 @@ include('includes/header.php');?>
 
                                 </div>
                             </div>
-                            <nav class="pagination-wrap">
-                                <?php  
 
-                                $result_db = mysqli_query($connection,"SELECT COUNT(rent_id) FROM rbook"); 
-                                $row_db = mysqli_fetch_row($result_db);  
-                                $total_records = $row_db[0];  
-                                $total_pages = ceil($total_records / $limit); 
-                                /* echo  $total_pages; */
-                                $pagLink = "<ul class='pagination'>";
-                                    if($page>1){
-                                        $pagLink .= '<li><a href="rentbook.php?page='.($page - 1).'" class="bg-primary text-white prev page-number">Previous</a></li>';
-                                    }
-                                    for ($i=1; $i<=$total_pages; $i++) {
-                                        // $current=$_GET['page'];
-                                        if($i==$page){
-                                            $active="active";
-                                        }else{
-                                            $active="";
-                                        }
-                                        $pagLink .= "<li><a class='page-number bg-primary text-white' href='rentbook.php?page=".$i."'>".$i."</a></li>";	
-                                    }
-                                   
-                                    if($total_pages>$page){
-                                        $pagLink .= '<li><a href="rentbook.php?page='.($page + 1).'" class="bg-primary text-white next page-number">Next</a></li>';
-                                    }
-                                    echo $pagLink. "</ul>";  
-                                
-
-
-                                ?>
-                            </nav>
-                        
+                            <!-- <nav class="pagination-wrap">
+                                <ul class="pagination">
+                                    <li><a href="shop-sidebar.html" class="prev page-number"><i
+                                                class="fa fa-angle-double-left"></i></a></li>
+                                    <li><span class="current page-number">1</span></li>
+                                    <li><a href="shop-sidebar.html" class="page-number">2</a></li>
+                                    <li><a href="shop-sidebar.html" class="page-number">3</a></li>
+                                    <li><a href="shop-sidebar.html" class="next page-number"><i
+                                                class="fa fa-angle-double-right"></i></a></li>
+                                </ul>
+                            </nav> -->
                         </div>
                          <!-- Category Start -->
                                 <?php include('includes/category-rent.php');?>

@@ -27,15 +27,16 @@
                                                     </a>
                                                 </li>
                                                 <li>
-                                                    <a href="oldbook.php">
-                                                        <span class="mm-text">Old Book</span>
-                                                    </a>
-                                                </li>
-                                                <li>
                                                     <a href="rentbook.php">
                                                         <span class="mm-text">Rent Book</span>
                                                     </a>
                                                 </li>
+                                                <li>
+                                                    <a href="oldbook.php">
+                                                        <span class="mm-text">Old Book</span>
+                                                    </a>
+                                                </li>
+                                                
                                             </ul>
                                         </li>
                                         <li class="mainmenu__item">
