@@ -98,7 +98,7 @@ header("location:contact.php");
                             <!-- Contact info widget start here -->
                             <div class="contact-info-widget mb--45 mb-sm--35">
                                 <div class="contact-info">
-                                    <h3>BMC Pustakalaya</h3>
+                                    <h3> Pustakalaya</h3>
                                     <p>Postal Address <br> PO Box 16122 Butwal Rupandehi <br>  Nepal
                                 </div>
                             </div>

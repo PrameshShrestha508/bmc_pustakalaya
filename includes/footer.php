@@ -7,8 +7,8 @@
                         <div class="col-lg-3 col-md-8 mb-md--30">
                             <div class="footer-widget">
                                 <div class="textwidget">
-                                    <img src="assets/img/logo/logo3.png" alt="Logo" class="mb--10">
-                                    <p class="font-size-16 font-2 mb--20">BMC Pustakalaya, an online bookstore.</p>
+                                    <img src="assets/img/logo/logo14.png" height="150px" alt="Logo" class="mb--10">
+                                    <!-- <p class="font-size-16 font-2 mb--20"> Pustakalaya, an online bookstore.</p> -->
                                     <!-- Social Icons Start Here -->
                                     <ul class="social">
                                         <li class="social__item">
@@ -123,7 +123,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-12 text-center">
-                            <p class="copyright-text">&copy; BMC Pustakalya 2021 MADE WITH <i class="fa fa-heart"></i></p>
+                            <p class="copyright-text">&copy;Pustakalya 2021 MADE WITH <i class="fa fa-heart"></i></p>
                         </div>
                     </div>
                 </div>

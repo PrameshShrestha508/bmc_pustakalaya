@@ -43,7 +43,7 @@
                                             <!-- <img src="" alt="logo"> -->
                                         </figure>
                                         <p class="font-size-16 font-2 heading-color bg-white text-dark p-4">
-                                        BMC Pustakalaya is an online bookstore with a mission to financially support local, independent bookstores. We believe that bookstores are essential to a healthy culture. They’re where authors can connect with readers, where we discover new writers, where children get hooked on the thrill of reading that can last a lifetime. They’re also anchors for our downtowns and communities. As more and more people buy their books online, we wanted to create an easy, convenient way for you to get your books and support bookstores at the same time.
+                                         Pustakalaya is an online bookstore with a mission to financially support local, independent bookstores. We believe that bookstores are essential to a healthy culture. They’re where authors can connect with readers, where we discover new writers, where children get hooked on the thrill of reading that can last a lifetime. They’re also anchors for our downtowns and communities. As more and more people buy their books online, we wanted to create an easy, convenient way for you to get your books and support bookstores at the same time.
                                         </p>
                                     </div>
                                 </div>
@@ -53,9 +53,9 @@
                     <div class="row pt--80 pt-md--60 pt-sm--35 pb--40 pb-md--30 pb-sm--15">
                         <div class="col-lg-7 col-md-6 mb-sm--30">
                             <div class="about-text">
-                                <h3 class="heading-tertiary heading-color mb--15">BMC Pustakalaya
+                                <h3 class="heading-tertiary heading-color mb--15"> Pustakalaya
                                 </h3>
-                                <p class="color--light-3 mb--25 mb-md--20">BMC Pustakalaya is an online bookstore with a mission to financially support local, independent bookstores. We believe that bookstores are essential to a healthy culture. They’re where authors can connect with readers, where we discover new writers, where children get hooked on the thrill of reading that can last a lifetime. They’re also anchors for our downtowns and communities. As more and more people buy their books online, we wanted to create an easy, convenient way for you to get your books and support bookstores at the same time.</p>
+                                <p class="color--light-3 mb--25 mb-md--20"> Pustakalaya is an online bookstore with a mission to financially support local, independent bookstores. We believe that bookstores are essential to a healthy culture. They’re where authors can connect with readers, where we discover new writers, where children get hooked on the thrill of reading that can last a lifetime. They’re also anchors for our downtowns and communities. As more and more people buy their books online, we wanted to create an easy, convenient way for you to get your books and support bookstores at the same time.</p>
                                 <figure>
                                     <img src="assets/img/about/about-signature.png" alt="signature">
                                 </figure>

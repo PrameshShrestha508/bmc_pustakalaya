@@ -58,7 +58,7 @@ include('includes/header.php');
                                                     <div class="airi-product-action">
                                                         <div class="product-action">
                                                         <a class="quickview-btn action-btn" href="product-details.php?itemno=<?php echo $row['new_id']; ?>"
-                                                            data-toggle="tooltip" data-placement="top" title="Quick view">
+                                                            data-toggle="tooltip" data-placement="top" title="Close view">
                                                             <i class="dl-icon-view"></i>
                                                         </a>
                                                             <form action="addtocart.php?itemno=<?php echo $row['new_id'];?>" method="post">

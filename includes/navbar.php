@@ -62,10 +62,10 @@
                                 <!-- Logo Start Here -->
                                 <a href="index.php" class="logo-box">
                                     <figure class="logo--normal">
-                                        <img src="assets/img/logo/bbmc.png" height="90px" width="140px" alt="Logo" />
+                                        <img src="assets/img/logo/logo11.png" height="90px" width="140px" alt="Logo" />
                                     </figure>
                                     <figure class="logo--transparency">
-                                        <img src="assets/img/logo/bmc8.png" height="80px" alt="Logo" />
+                                        <img src="assets/img/logo/logo14.png" height="90px" width="140px" alt="Logo" />
                                     </figure>
                                 </a>
                                 <!-- Logo End Here -->
