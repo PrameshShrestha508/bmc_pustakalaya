@@ -45,8 +45,8 @@
                                             </a>
                                         </li>
                                         <li class="mainmenu__item">
-                                            <a href="team.php" class="mainmenu__link">
-                                                <span class="mm-text">Our Team</span>
+                                            <a href="request.php" class="mainmenu__link">
+                                                <span class="mm-text">Request  Books</span>
                                             </a>
                                         </li>
                                         <li class="mainmenu__item">
@@ -280,8 +280,8 @@
                                             </a>
                                         </li>
                                         <li class="mainmenu__item">
-                                            <a href="team.php" class="mainmenu__link">
-                                                <span class="mm-text">Our Team</span>
+                                            <a href="request.php" class="mainmenu__link">
+                                                <span class="mm-text">Request  Books</span>
                                             </a>
                                         </li>
                                         <li class="mainmenu__item">

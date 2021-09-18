@@ -228,9 +228,9 @@
                                                     </div>
                                                 </div>
                                                 <div class="team-member__info">
-                                                    <h2 class="team-member__name"><a href="#">Developer</a>
+                                                    <h2 class="team-member__name"><a href="#">Madhu Khadka</a>
                                                     </h2>
-                                                    <p class="team-member__designation">Marketing Manager</p>
+                                                    <p class="team-member__designation">Developer</p>
                                                     <p class="team-member__desc">Pellentesque dignissim at ante sed
                                                         iaculis. Pellentesque habitant morbi tristique senectus et netus
                                                         et malesuada fames ac turpis egestas. Sed sod</p>
