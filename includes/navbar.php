@@ -46,7 +46,12 @@
                                         </li>
                                         <li class="mainmenu__item">
                                             <a href="request.php" class="mainmenu__link">
-                                                <span class="mm-text">Request  Books</span>
+                                                <span class="mm-text">Request</span>
+                                            </a>
+                                        </li>
+                                        <li class="mainmenu__item">
+                                            <a href="blog.php" class="mainmenu__link">
+                                                <span class="mm-text">News & Blog</span>
                                             </a>
                                         </li>
                                         <li class="mainmenu__item">
@@ -281,7 +286,12 @@
                                         </li>
                                         <li class="mainmenu__item">
                                             <a href="request.php" class="mainmenu__link">
-                                                <span class="mm-text">Request  Books</span>
+                                                <span class="mm-text">Request</span>
+                                            </a>
+                                        </li>
+                                        <li class="mainmenu__item">
+                                            <a href="blog.php" class="mainmenu__link">
+                                                <span class="mm-text">News & Blog</span>
                                             </a>
                                         </li>
                                         <li class="mainmenu__item">

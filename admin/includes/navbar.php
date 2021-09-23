@@ -9,7 +9,7 @@
   <div class="sidebar-brand-icon rotate-n-15">
   <i class="fas fa-book-reader"></i>
   </div>
-  <div class="sidebar-brand-text mx-3">BMC Pustakalaya <sup></sup></div>
+  <div class="sidebar-brand-text mx-3">Books Stall and Renting Store <sup></sup></div>
 </a>
 
 <!-- Divider -->
@@ -84,13 +84,22 @@
     </div>
   </div>
 </li> -->
-
 <!-- Divider -->
 <hr class="sidebar-divider">
 
+<!-- Divider -->
+<hr class="sidebar-divider">
+<div class="sidebar-heading">
+    Blog
+</div>
+<li class="nav-item">
+  <a class="nav-link" href="blog.php">
+    <i class="fas fa-user-shield"></i>
+    <span>Post</span></a>
+</li>
 <!-- Heading -->
 <div class="sidebar-heading">
-  Addons
+  Extra
 </div>
 
 <!-- Nav Item - Pages Collapse Menu -->

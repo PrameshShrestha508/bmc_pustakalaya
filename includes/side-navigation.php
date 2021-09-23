@@ -4,7 +4,7 @@
                 <div class="side-navigation-inner">
                     <div class="widget">
                         <ul class="sidenav-menu">
-                            <li><a href="about-us.php">About BMC  Pustakalaya</a></li>
+                            <li><a href="about-us.php">About Books Stall And Renting Store</a></li>
                             <li><a href="contact-us.php">Contact Us</a></li>
                             <!-- <li><a href="newbook.php">Portfolio</a></li> -->
                         </ul>
@@ -14,7 +14,7 @@
                             <p>
                                 <img src="assets/img/others/payments.png" alt="payment">
                             </p>
-                            <p>BMC Pustakalaya is an online bookstore with a mission to financially support local, independent bookstores.</p>
+                            <p>Books Stall And Renting Store is an online bookstore with a mission to financially support local, independent bookstores.</p>
                         </div>
                     </div>
                     <div class="widget">
@@ -68,7 +68,7 @@
                     </div>
                     <div class="widget">
                         <div class="text-widget">
-                            <p class="copyright-text">&copy; BMC Pustakalaya 2021 MADE WITH <i class="fa fa-heart"></i></p>
+                            <p class="copyright-text">&copy; Developed With <i class="fa fa-heart"></i> By Books Stall And Renting Store </p>
                         </div>
                     </div>
                 </div>

@@ -6,7 +6,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-12 text-center">
-                            <p class="copyright-text">&copy; Books Stall And Renting Store 2021 MADE WITH <i class="fa fa-heart"></i></p>
+                            <p class="copyright-text">&copy; Developed With <i class="fa fa-heart"></i> By Books Stall and Renting Stall</p>
                         </div>
                     </div>
                 </div>

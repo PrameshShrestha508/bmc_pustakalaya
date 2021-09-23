@@ -2363,13 +2363,13 @@ p:last-child {
 }
 
 .container-fluid {
-  padding-left: 7.5rem;
-  padding-right: 7.5rem;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
 }
 @media (max-width: 93.6875em) {
   .container-fluid {
-    padding-left: 3rem;
-    padding-right: 3rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
 }
 @media (max-width: 74.9375em) {
