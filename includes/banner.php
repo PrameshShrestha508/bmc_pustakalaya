@@ -47,7 +47,7 @@
                                         data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]"
                                         data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]"
                                         style="z-index: 6; white-space: nowrap; font-size: 50px; line-height: 50px; font-weight: 400; color: #ffffff; letter-spacing: 5px;font-family:Montserrat;">
-                                         PUSTAKALAYA<br>
+                                         Books Stall And Renting Store<br>
                                         <strong>Hamro Book Pasal</strong>
                                         
                                          </div>

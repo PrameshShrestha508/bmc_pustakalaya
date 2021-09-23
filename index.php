@@ -24,10 +24,10 @@
                         <div class="col-md-6">
                             <div class="text-block">
                                 <figure class="mb--30 mb-md--20 max-w-60">
-                                    <img src="assets/img/logo/logo11.png" alt="logo">
+                                    <img src="assets/img/logo/logo_1.png" alt="logo">
                                 </figure>
 
-                                <p class="font-2 heading-color font-size-16 mb--30 mb-md--20"> Pustakalaya is an online bookstore with a mission to financially support local, independent bookstores. We believe that bookstores are essential to a healthy culture. They’re where authors can connect with readers, where we discover new writers, where children get hooked on the thrill of reading that can last a lifetime. They’re also anchors for our downtowns and communities. As more and more people buy their books online, we wanted to create an easy, convenient way for you to get your books and support bookstores at the same time.</p>
+                                <p class="font-2 heading-color font-size-16 mb--30 mb-md--20"> <b>Books Stall And Renting Store</b> is an online bookstore with a mission to financially support local, independent bookstores. We believe that bookstores are essential to a healthy culture. They’re where authors can connect with readers, where we discover new writers, where children get hooked on the thrill of reading that can last a lifetime. They’re also anchors for our downtowns and communities. As more and more people buy their books online, we wanted to create an easy, convenient way for you to get your books and support bookstores at the same time.</p>
                                 <a href="about-us.php" class="heading-button mb-sm--30">Read More</a>
                             </div>
                         </div>
