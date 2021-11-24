@@ -273,6 +273,68 @@
                 </div>
             </section>
             <!-- Newsletter area End Here --> 
+        <!-- Blog area Start Here -->
+            <div class="blog-area ptb--80 ptb-sm--60">
+            <h2 class="heading-secondary text-center">Latest Blog</h2>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="airi-element-carousel blog-carousel dot-style-1" data-slick-options='{
+                                    "spaceBetween": 30,
+                                    "slidesToShow": 3,
+                                    "slidesToScroll": 1,
+                                    "dots": true,
+                                    "infinite": true
+                                }' data-slick-responsive='[
+                                    {"breakpoint":991, "settings": {"slidesToShow": 2} },
+                                    {"breakpoint":767, "settings": {"slidesToShow": 1} }
+                                ]'>
+                                        <?php
+                                                include('config.php');
+                                                $query = "SELECT * FROM post order by post.post_id DESC";
+                                                $query_run = mysqli_query($connection, $query);
+                                                if(mysqli_num_rows($query_run) > 0)        
+                                                {
+                                                    while($row = mysqli_fetch_assoc($query_run))
+                                                    {
+                                                        $i=$row['post_id'];
+                                            ?>
+                                <div class="item">
+                                    <article class="blog">
+                                        <div class="blog-media">
+                                            <div class="image">
+                                                <a href="single-post.php?itemno=<?php echo $row['post_id']; ?>">
+                                                <img src="<?php echo 'assets/img/post/'.$row['post_img'];?>"
+                                                                alt="Blog" class="secondary-image" height="250px" width="250px">
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="blog-info">
+                                            <div class="blog-entry-meta">
+                                                <span class="blog-category">
+                                                    <a href="blog.php">Trends</a>
+                                                </span>
+                                            </div>
+                                            <h3 class="blog-title">
+                                                <a href="single-post.php?itemno=<?php echo $row['post_id']; ?>"><?php echo $row['title'];?></a>
+                                            </h3>
+                                            <div class="blog-footer-meta">
+                                            <a href="blog.php" class="posted-on" tabindex="0"><?php echo $row['post_date'];?></a>
+                                                <span class="meta-separator">-</span>
+                                                <a href="blog.php" class="posted-by" tabindex="0">By <?php echo $row['author'];?></a>
+                                            </div>
+                                        </div>
+                                    </article>
+                                </div>
+                             
+                               <?php }} ?> 
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Blog area End Here -->
 
         </div>
         <!-- Main Content Wrapper Start -->

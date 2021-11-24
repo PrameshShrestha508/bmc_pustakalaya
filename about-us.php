@@ -14,7 +14,7 @@
      
 
         <!-- Breadcrumb area Start -->
-        <div class="breadcrumb-area bg--white-6 pt--60 pb--70 pt-lg--40 pb-lg--50 pt-md--30 pb-md--40">
+        <div class="breadcrumb-area bg--white-6 pt--40 pb--40 pt-lg--40 pb-lg--50 pt-md--30 pb-md--40">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-12 text-center">
@@ -129,8 +129,8 @@
                                         <div class="airi-team">
                                             <div class="team-member">
                                                 <div class="team-member__thumbnail">
-                                                    <img src="assets/img/team/pramesh.jpg" alt="Team Member">
-                                                    <a href="team.html" class="link-overlay">Team member</a>
+                                                    <img src="assets/img/team/pramesh.jpg"  alt="Team Member">
+                                                    <a href="https://prameshshrestha508.github.io/Portfolio/port.html" target="_blank" class="link-overlay">Team member</a>
                                                     <div class="team-member__overlay">
                                                         <ul class="social social-round">
                                                             <li class="social__item">
@@ -154,7 +154,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="team-member__info">
-                                                    <h2 class="team-member__name"><a href="#">Pramesh B. shrestha</a>
+                                                    <h2 class="team-member__name"><a href="https://prameshshrestha508.github.io/Portfolio/port.html">Pramesh B. shrestha</a>
                                                     </h2>
                                                     <p class="team-member__designation">Developer</p>
                                                     <p class="team-member__desc">Pellentesque dignissim at ante sed

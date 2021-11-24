@@ -43,7 +43,7 @@ header("location:contact.php");
         <!-- Header Header area End -->
 
         <!-- Breadcrumb area Start -->
-        <div class="breadcrumb-area bg--white-6 pt--60 pb--70 pt-lg--40 pb-lg--50 pt-md--30 pb-md--40">
+        <div class="breadcrumb-area bg--white-6 pt--30 pb--30 pt-lg--40 pb-lg--50 pt-md--30 pb-md--40">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-12 text-center">
@@ -62,7 +62,7 @@ header("location:contact.php");
         <div id="content" class="main-content-wrapper">
             <div class="page-content-inner">
                 <div class="container">
-                    <div class="row pt--75 pt-md--50 pt-sm--30 pb--80 pb-md--60 pb-sm--35">
+                    <div class="row pt--30 pt-md--50 pt-sm--30 pb--30 pb-md--30 pb-sm--35">
                         <div class="col-md-7 mb-sm--30">
                             <h2 class="heading-secondary mb--50 mb-md--35 mb-sm--20">Get in touch</h2>
 
@@ -150,7 +150,7 @@ header("location:contact.php");
                         </div>
                     </div>
                 </div>
-                <div class="container-fluid p-0">
+                <!-- <div class="container-fluid p-0">
                     <div class="row no-gutters">
                         <div class="col-12">
                             <div id="google-map">
@@ -158,7 +158,7 @@ header("location:contact.php");
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
         <!-- Main Content Wrapper Start -->

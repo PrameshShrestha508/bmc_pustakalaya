@@ -53,9 +53,9 @@
                                         <h2 class="entry-title"><?php echo $row['title'];?></h2>
                                         <div class="entry-meta">
                                             <div class="entry-meta-top">
-                                                <a href="blog.html" class="posted-on"><?php echo $row['post_date'];?></a>
+                                                <a href="blog.php" class="posted-on"><?php echo $row['post_date'];?></a>
                                                 <span class="meta-separator">-</span>
-                                                <a href="blog.html" class="posted-by"><?php echo $row['author'];?></a>
+                                                <a href="blog.php" class="posted-by"><?php echo $row['author'];?></a>
                                                 
                                             </div>
                                             <!-- <div class="entry-meta-bottom">
@@ -70,12 +70,12 @@
                                             </div> -->
                                         </div>
                                     </div>
-                                    <div class="entry-thumbnail">
+                                    <div class="entry-thumbnail d-flex justify-content-center">
                                     <img src="<?php echo 'assets/img/post/'.$row['post_img'];?>"
-                                                                alt="Blog" class="secondary-image" height="800px" width="100%">
+                                                                alt="Blog" class="secondary-image" height="700px" width="50%">
                                     </div>
                                     <div class="entry-content">
-                                        <p><?php echo $row['description'];?></p>
+                                        <h3><?php echo $row['description'];?></h3>
                                        
                                     
                                     </div>
@@ -85,7 +85,7 @@
                                                 <i class="fa fa-tags"></i>
                                             </span>
                                             <span>
-                                                <a href="blog.php">Education</a>
+                                                <a href="blog.php"><?php echo $row['category']?></a>
                                                 
                                             </span>
                                         </div>

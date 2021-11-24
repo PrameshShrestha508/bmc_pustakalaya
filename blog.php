@@ -11,7 +11,7 @@
 
 
         <!-- Breadcrumb area Start -->
-        <div class="breadcrumb-area bg--white-6 pt--60 pb--70 pt-lg--40 pb-lg--50 pt-md--30 pb-md--40">
+        <div class="breadcrumb-area bg--white-6 pt--40 pb--40 pt-lg--40 pb-lg--50 pt-md--30 pb-md--40">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-12 text-center">
@@ -36,7 +36,15 @@
 
                                             <?php
                                                 include('config.php');
-                                                $query = "SELECT * FROM post order by post.post_id DESC";
+                                                $limit=2;
+                                                if(isset($_GET['page'])){
+                                                    $page=$_GET['page'];
+                                                }else{
+                                                    $page=1;
+                                                }
+                                              
+                                                $offset=($page-1) * $limit;
+                                                $query = "SELECT * FROM post order by post.post_id DESC LIMIT {$offset},{$limit}";
                                                 $query_run = mysqli_query($connection, $query);
                                                 if(mysqli_num_rows($query_run) > 0)        
                                                 {
@@ -51,7 +59,7 @@
                                             <div class="image">
                                             <img src="<?php echo 'assets/img/post/'.$row['post_img'];?>"
                                                                 alt="Blog" class="secondary-image" height="800px" width="100%">
-                                                <a href="single-post.php" class="link-overlay">Blog</a>
+                                                <a href="single-post.php?itemno=<?php echo $row['post_id']; ?>" class="link-overlay">Blog</a>
                                             </div>
                                         </div>
                                         <div class="post-info post-info--2">
@@ -62,12 +70,16 @@
                                                 <a href="single-post.php?itemno=<?php echo $row['post_id']; ?>"><?php echo $row['title'];?></a>
                                             </h3>
                                             <div class="post-meta">
-                                                <a href="blog.html" class="posted-on" tabindex="0"><?php echo $row['post_date'];?></a>
+                                                <a href="blog.php" class="posted-on" tabindex="0"><?php echo $row['post_date'];?></a>
                                                 <span class="meta-separator">-</span>
-                                                <a href="blog.html" class="posted-by" tabindex="0">By <?php echo $row['author'];?></a>
+                                                <a href="blog.php" class="posted-by" tabindex="0">By <?php echo $row['author'];?></a>
                                             </div>
                                             <div class="post-content">
-                                                <p><?php echo $row['description'];?>…</p>
+                                                <p><?php
+                                                
+                                                $string= $row['description'];
+                                                 echo substr($string,0,100);
+                                                ?>…</p>
                                             </div>
                                             <a href="single-post.php?itemno=<?php echo $row['post_id']; ?>" class="read-more-btn">Read More</a>
                                         </div>
@@ -81,18 +93,32 @@
                                
                             </div>
                             <div class="row">
-                                <div class="col-12">
-                                    <nav class="pagination-wrap">
-                                        <ul class="pagination">
-                                            <li><a href="#" class="prev page-number"><i
-                                                        class="fa fa-long-arrow-left"></i></a></li>
-                                            <li><span class="current page-number">1</span></li>
-                                            <li><a href="#" class="page-number">2</a></li>
-                                            <li><a href="#" class="page-number">3</a></li>
-                                            <li><a href="#" class="next page-number"><i
-                                                        class="fa fa-long-arrow-right"></i></a></li>
-                                        </ul>
-                                    </nav>
+                                <div class="col-12">  
+                                        <?php
+                                       include('config.php');
+                                       $query = "SELECT * FROM post";
+                                       $result1 = mysqli_query($connection, $query);
+                                       if(mysqli_num_rows($result1) > 0)        
+                                       {
+                                           $total_records=mysqli_num_rows($result1);
+                                          
+                                           $total_page=ceil($total_records/$limit);
+                                           echo' <nav class="pagination-wrap">';
+                                                echo' <ul class="pagination">';
+                                                        for($i=1;$i<=$total_page; $i++)
+                                                        {
+                                                            if($i==$page){
+                                                                $active="page-number current";
+                                                            }else{
+                                                                $active="page-number";
+                                                            }
+                                                        echo'<li><a class="'.$active.'" href="blog.php?page='.$i.'">'.$i.'</a></li>';
+                                                        }
+                                                echo '</ul>';
+                                           echo'</nav>';
+                                       }
+                                        ?>                                                  
+
                                 </div>
                             </div>
                         </div>
@@ -102,6 +128,7 @@
                                     <h3 class="widget-title">Categories</h3>
                                     <ul class="menu list-unstyled">
                                         <li><a href="#">Education</a></li>
+                                        <li><a href="#">Knowledge</a></li>
                                         
                                     </ul>
                                 </div>
@@ -110,7 +137,7 @@
                                     <div class="recent-post">
                                                 <?php
                                                     include('config.php');
-                                                    $query = "SELECT * FROM post order by post.post_id DESC";
+                                                    $query = "SELECT * FROM post order by post.post_id DESC LIMIT 3";
                                                     $query_run = mysqli_query($connection, $query);
                                                     if(mysqli_num_rows($query_run) > 0)        
                                                     {
@@ -142,6 +169,7 @@
                                     <h3 class="widget-title">Tags</h3>
                                     <div class="tagcloud">
                                         <a href="blog.php">Education</a>
+                                        <a href="blog.php">Knowledge</a>
                                         
                                     </div>
                                 </div>

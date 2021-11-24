@@ -178,7 +178,7 @@
                             <div class="col-4">
                                 <a href="index.php" class="logo-box">
                                     <figure class="logo--normal">
-                                        <img src="assets/img/logo/bbmc.png" alt="Logo">
+                                        <img src="assets/img/logo/logo_1.png" alt="Logo">
                                     </figure>
                                 </a>
                             </div>
@@ -302,7 +302,7 @@
                                             </a>
                                         </li>
                                         <li class="mainmenu__item">
-                                            <a href="contact.php" class="mainmenu__link">
+                                            <a href="contact-us.php" class="mainmenu__link">
                                                 <span class="mm-text">Contact Us</span>
                                             </a>
                                         </li>

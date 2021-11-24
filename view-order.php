@@ -26,7 +26,7 @@
     			<div class="receipt-header">
 					<div class="col-xs-6 col-sm-6 col-md-6">
 						<div class="receipt-left">
-							<img class="img-responsive" alt="iamgurdeeposahan" src="assets/img/logo/bmc2.png" style="width:80px; border-radius: 50px;">
+							<img class="img-responsive" alt="iamgurdeeposahan" src="assets/img/logo/logo_1.png" style="width:80px; border-radius: 50px;">
 						</div>
                        
 					</div>
@@ -34,7 +34,7 @@
 					<div class="col-xs-6 col-sm-6 col-md-6 text-right">
 						<div class="receipt-right">
                            
-							<h5>BMC Pustakalaya.</h5>
+							<h5>Books Stall and Renting Store.</h5>
 							<p>+91 12345-6789 <i class="fa fa-phone"></i></p>
 							<p>bmcpustakalaya@gmail.com <i class="fa fa-envelope-o"></i></p>
 							<p>Butwal,Nepal<i class="fa fa-location-arrow"></i></p>

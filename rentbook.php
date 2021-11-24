@@ -70,11 +70,11 @@ include('includes/header.php');?>
                                                 if (isset($_GET["page"])) {
                                                     $page  = $_GET["page"]; 
                                                     } 
-                                                    else{ 
+                                                else{ 
                                                     $page=1;
                                                     };  
-                                                $start_from = ($page-1) * $limit;
-                                                $query = "SELECT * FROM rbook  ORDER BY rent_id ASC LIMIT $start_from, $limit";
+                                                    $offset=($page-1) * $limit;
+                                                $query = "SELECT * FROM rbook  ORDER BY rent_id ASC LIMIT {$offset},{$limit}";
                                                 $query_run = mysqli_query($connection, $query);
                                                 if(mysqli_num_rows($query_run) > 0)        
                                                 {
@@ -149,37 +149,34 @@ include('includes/header.php');?>
 
                                 </div>
                             </div>
-                            <nav class="pagination-wrap">
-                                <?php  
-
-                                $result_db = mysqli_query($connection,"SELECT COUNT(rent_id) FROM rbook"); 
-                                $row_db = mysqli_fetch_row($result_db);  
-                                $total_records = $row_db[0];  
-                                $total_pages = ceil($total_records / $limit); 
-                                /* echo  $total_pages; */
-                                $pagLink = "<ul class='pagination'>";
-                                    if($page>1){
-                                        $pagLink .= '<li><a href="rentbook.php?page='.($page - 1).'" class="bg-primary text-white prev page-number">Previous</a></li>';
-                                    }
-                                    for ($i=1; $i<=$total_pages; $i++) {
-                                        // $current=$_GET['page'];
-                                        if($i==$page){
-                                            $active="active";
-                                        }else{
-                                            $active="";
-                                        }
-                                        $pagLink .= "<li><a class='page-number bg-primary text-white' href='rentbook.php?page=".$i."'>".$i."</a></li>";	
-                                    }
-                                   
-                                    if($total_pages>$page){
-                                        $pagLink .= '<li><a href="rentbook.php?page='.($page + 1).'" class="bg-primary text-white next page-number">Next</a></li>';
-                                    }
-                                    echo $pagLink. "</ul>";  
-                                
-
-
-                                ?>
-                            </nav>
+                            <div class="row">
+                                <div class="col-12">  
+                                        <?php
+                                       include('config.php');
+                                       $query = "SELECT * FROM rbook";
+                                       $result1 = mysqli_query($connection, $query);
+                                       if(mysqli_num_rows($result1) > 0)        
+                                       {
+                                           $total_records=mysqli_num_rows($result1);
+                                          
+                                           $total_page=ceil($total_records/$limit);
+                                           echo' <nav class="pagination-wrap">';
+                                                echo' <ul class="pagination">';
+                                                        for($i=1;$i<=$total_page; $i++)
+                                                        {
+                                                            if($i==$page){
+                                                                $active="page-number current";
+                                                            }else{
+                                                                $active="page-number";
+                                                            }
+                                                        echo'<li><a class="'.$active.'" href="rentbook.php?page='.$i.'">'.$i.'</a></li>';
+                                                        }
+                                                echo '</ul>';
+                                           echo'</nav>';
+                                       }
+                                        ?>                                                  
+                                </div>
+                            </div>
                         
                         </div>
                          <!-- Category Start -->
