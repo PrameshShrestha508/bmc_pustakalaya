@@ -75,10 +75,11 @@ else {
   	$query = "INSERT INTO users (name, email,phone,address,password,usertype,service) 
   			  VALUES('$username', '$email','$phone','$address','$password','$usertype','$service')";
   	$result=mysqli_query($connection, $query);
-
-  	$_SESSION['username'] = $username;
-  	$_SESSION['success'] = "You are now logged in";
-  	header('location:login-register.php');
+    
+      if($result){
+      header('location:login-register.php');
+      }
   }
+
 }
 ?>

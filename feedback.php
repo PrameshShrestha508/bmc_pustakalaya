@@ -11,13 +11,13 @@
                                     <a class="product-data-tab__link nav-link" id="nav-reviews-tab" data-toggle="tab"
                                         href="#nav-reviews" role="tab" aria-selected="true">
                                         <span>Reviews(
-                                                <?php 
-                                                    include('config.php');
-                                                    $query = "SELECT id FROM ratting where pid='$ii' ORDER BY id";  
-                                                    $query_run = mysqli_query($connection, $query);
-                                                    $row = mysqli_num_rows($query_run);
-                                                    echo $row;
-                                                ?>)
+                                                    <?php 
+                                                        include('config.php');
+                                                        $query = "SELECT id FROM ratting where pid='$ii' ORDER BY id";  
+                                                        $query_run = mysqli_query($connection, $query);
+                                                        $row = mysqli_num_rows($query_run);
+                                                        echo $row;
+                                                    ?>)
                                         
                                         </span>
                                     </a>
@@ -26,6 +26,7 @@
                                     <div class="tab-pane fade show active" id="nav-description" role="tabpanel"
                                         aria-labelledby="nav-description-tab">
                                         <div class="product-description">
+                                            
                                                 <p>Curabitur sodales euismod nibh. Sed iaculis sed orci eget semper. Nam
                                                     auctor, augue et eleifend tincidunt, felis mauris convallis neque,
                                                     in placerat metus urna laoreet diam. Morbi sagittis facilisis arcu
@@ -50,16 +51,16 @@
                                             
                                             </h3>
                                             <ul class="review__list">
-                                            <?php
-                                                include('config.php');
-                                                $query = "SELECT * FROM ratting  where pid='$ii'";
-                                                $query_run = mysqli_query($connection, $query);
-                                                if(mysqli_num_rows($query_run) > 0)        
-                                                {
-                                                    while($row = mysqli_fetch_assoc($query_run))
+                                                <?php
+                                                    include('config.php');
+                                                    $query = "SELECT * FROM ratting  where pid='$ii'";
+                                                    $query_run = mysqli_query($connection, $query);
+                                                    if(mysqli_num_rows($query_run) > 0)        
                                                     {
-                                                       
-                                            ?>
+                                                        while($row = mysqli_fetch_assoc($query_run))
+                                                        {
+                                                        
+                                                ?>
                                                 <li class="review__item">
                                                     <div class="review__container">
                                                         <img src="assets/img/others/comment-icon-2.png"

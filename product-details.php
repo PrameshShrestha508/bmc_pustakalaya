@@ -134,9 +134,25 @@ input[type=number] {
                         </div>
                         <div class="col-md-6 product-main-details mt--40 mt-md--10 mt-sm--30">
                             <div class="product-summary">
-                               
+                                <div class="product-rating float-left">
+                                           
+                                    <span>
+                                        <i class="dl-icon-star rated"></i>
+                                        <i class="dl-icon-star rated"></i>
+                                        <i class="dl-icon-star rated"></i>
+                                        <i class="dl-icon-star rated"></i>
+                                        <i class="dl-icon-star rated"></i>
+                                    </span>
+                                    <a href="#" class="review-link">(<?php 
+                                                    include('config.php');
+                                                    $query11 = "SELECT id FROM ratting where pid='$ii' ORDER BY id";  
+                                                    $query_run11 = mysqli_query($connection, $query11);
+                                                    $row11 = mysqli_num_rows($query_run11);
+                                                    echo $row11;
+                                                ?> customer review)</a>
+                                </div>
                                 
-                             
+                                <br>
                                 <h3 class="product-title"><?php echo $row['newbook'].' by';?></h3>
                                 <h3 class="product-title"><?php echo $row['Author'];?></h3>
                                 <span class="product-stock in-stock float-right">
