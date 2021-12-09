@@ -135,14 +135,27 @@ input[type=number] {
                         <div class="col-md-6 product-main-details mt--40 mt-md--10 mt-sm--30">
                             <div class="product-summary">
                                 <div class="product-rating float-left">
-                                           
-                                    <span>
-                                        <i class="dl-icon-star rated"></i>
-                                        <i class="dl-icon-star rated"></i>
-                                        <i class="dl-icon-star rated"></i>
-                                        <i class="dl-icon-star rated"></i>
-                                        <i class="dl-icon-star rated"></i>
-                                    </span>
+                                                <?php
+                                                    include('config.php');
+                                                    $query11 = "SELECT AVG(ratting) AS avg FROM ratting  where pid='$ii'";
+                                                    $query_run11 = mysqli_query($connection, $query11);
+                                                    if(mysqli_num_rows($query_run11) > 0)        
+                                                    {
+                                                        while($row11 = mysqli_fetch_assoc($query_run11))
+                                                        {
+                                                            // $row12=$row11['avg'];
+
+                                                ?>
+                                                            <p>
+                                                                <?php for($i=1;$i<=$row11['avg'];$i++){ ?>
+                                                                <span class="fa fa-star checked"></span>
+                                                                <?php  }?>
+
+                                                                <?php for($j=1;$j<=5-$row11['avg'];$j++) {?>
+                                                                  <span class="fa fa-star "></span>
+                                                                <?php  } ?>
+                                                            </p>
+                                                            <?php }}?>
                                     <a href="#" class="review-link">(<?php 
                                                     include('config.php');
                                                     $query11 = "SELECT id FROM ratting where pid='$ii' ORDER BY id";  
@@ -152,7 +165,7 @@ input[type=number] {
                                                 ?> customer review)</a>
                                 </div>
                                 
-                                <br>
+                                <br><br>
                                 <h3 class="product-title"><?php echo $row['newbook'].' by';?></h3>
                                 <h3 class="product-title"><?php echo $row['Author'];?></h3>
                                 <span class="product-stock in-stock float-right">
