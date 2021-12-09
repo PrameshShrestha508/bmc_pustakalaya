@@ -106,7 +106,10 @@ include('includes/header.php');
                                         </div>
                                     </div>
                                    
-                             <?php }}?>
+                             <?php }}
+                             else{
+                            echo "<h4 style='color:red;'>Sorry, Book Not Found</h4>";   
+                             }?>
 
 
                         </div>

@@ -43,20 +43,19 @@ if (isset($_POST['rsubmit'])) {
   $password = mysqli_real_escape_string($connection, $_POST['password']);
   $usertype = mysqli_real_escape_string($connection, $_POST['usertype']);
   $service = mysqli_real_escape_string($connection, $_POST['service']);
-
+  $nameErr=$emailErr=$phoneErr=$addressErr=$passwordErr="";
   // form validation: ensure that the form is correctly filled ...
   // by adding (array_push()) corresponding error unto $errors array
-  if (empty($username)) { array_push($errors, "Username is required"); }
-  if (empty($email)) { array_push($errors, "Email is required"); }
-  if (empty($phone)) { array_push($errors, "Phone NO is required"); }
-  if (empty($address)) { array_push($errors, "Address is required"); }
-  if (empty($password)) { array_push($errors, "Password is required"); }
-
   // first check the database to make sure 
   // a user does not already exist with the same username and/or email
   $sql = "SELECT * FROM users WHERE name='$username' OR email='$email' LIMIT 1";
   $result = mysqli_query($connection, $sql);
   $user = mysqli_fetch_assoc($result);
+    
+  if($username==""){
+    echo"<alert>username cant be empty</alert>";
+  }
+
   
   if ($user) { // if user exists
     if ($user['name'] === $username) {
@@ -67,6 +66,7 @@ if (isset($_POST['rsubmit'])) {
       array_push($errors, "email already exists");
     }
   }
+
 
   // Finally, register user if there are no errors in the form
 else {

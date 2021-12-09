@@ -33,7 +33,10 @@ include('config.php');
                 $query1 = "UPDATE users SET service='PRO' where name='$id'";
                                                 
                 $query_run1 = mysqli_query($connection, $query1);
+              if($query_run1){
                 header("location:rentbook-checkout.php?itemno='$idd'");
+              }
+               
                 
             }
 
