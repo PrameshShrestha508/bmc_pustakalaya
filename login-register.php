@@ -39,6 +39,7 @@ include('includes/header.php');
                             if (isset($_POST['lsubmit']))
                             {
                                 $username = mysqli_real_escape_string($connection,$_POST['uname']);
+                                $email = mysqli_real_escape_string($connection,$_POST['email']);
                                 $password = mysqli_real_escape_string($connection,$_POST['password']);
                                 $Failed="Login Error- Please Try Again!!!";
 
@@ -113,10 +114,14 @@ include('includes/header.php');
                                 $result = mysqli_query($connection, $sql);
                                 $user = mysqli_fetch_assoc($result);
 
+                                // if(!preg_match('/^[a-zA-Z0-9]{5,}$/',$_POST['uname'])) { 
+                                //     $nameErr="username must be start with  empty";
+                                // }
                                     if($username==""){
                                             $nameErr="username cant be empty";
                                     }
-
+                                   
+                                    
                                     else if ($user) { // if user exists
                                         if ($user['name'] === $username) {
                                             $nameErr= "Username already exists";
@@ -126,8 +131,20 @@ include('includes/header.php');
                                             $emailErr= "Email already exists";
                                         }
                                     }
+                                    else if (!preg_match('/^[A-Za-z][A-Za-z0-9]{4,31}$/', $username) ){
+                                        $nameErr="Name should contain only letter and shouldn't contain space";
+                                    }
                                     else if($email==""){
                                         $emailErr= "Email cant be empty";
+                                    }
+                                //     else if(filter_var($email, FILTER_VALIDATE_EMAIL)) {
+                                //         $emailErr= "Email must be in valid format";
+                                //    }
+                                    else if(!preg_match('/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/', $email)){
+                                             $emailErr= "Email must be in valid format";
+                                     }
+                                    else if(!preg_match("/^[0-9]{10}$/", $phone)){
+                                        $phoneErr= "Phone number should be in digits and must be  10 digits";
                                     }
                                     else if($phone==""){
                                         $phoneErr= "Phone cant be empty";
