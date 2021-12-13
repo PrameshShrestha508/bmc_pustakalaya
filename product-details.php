@@ -267,7 +267,7 @@ input[type=number] {
 
                                     <?php
                                         include('config.php');
-                                        $query = "SELECT * FROM nbook order by rand() LIMIT 3";
+                                        $query = "SELECT * FROM nbook order by rand() LIMIT 4";
                                         $query_run = mysqli_query($connection, $query);
                                         if(mysqli_num_rows($query_run) > 0)        
                                         {
@@ -275,7 +275,7 @@ input[type=number] {
                                             {
                                                 $i=$row['new_id'];
                                         ?>
-                                <div class="col-4">
+                                <div class="col-3">
             
                                         <div class="airi-product">
                                             <div class="product-inner">

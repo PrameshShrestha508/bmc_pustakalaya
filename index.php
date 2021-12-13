@@ -156,14 +156,14 @@
                 <div class="container-fluid">
                     <div class="row mb--40 mb-md--30">
                         <div class="col-12">
-                            <h2 class="heading-secondary text-center">Trending</h2>
+                            <h3 class="heading-secondary text-center">Recommend For You</h3>
                         </div>
                     </div>
                     <div class="row">
 
                                             <?php
                                                 include('config.php');
-                                                $query = "SELECT * FROM nbook  LIMIT 8";
+                                                $query = "SELECT * FROM nbook  LIMIT 4";
                                                 $query_run = mysqli_query($connection, $query);
                                                 if(mysqli_num_rows($query_run) > 0)        
                                                 {

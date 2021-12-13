@@ -27,12 +27,21 @@
                                         aria-labelledby="nav-description-tab">
                                         <div class="product-description">
                                             
-                                                <p>Curabitur sodales euismod nibh. Sed iaculis sed orci eget semper. Nam
-                                                    auctor, augue et eleifend tincidunt, felis mauris convallis neque,
-                                                    in placerat metus urna laoreet diam. Morbi sagittis facilisis arcu
-                                                    sed ornare. Maecenas dictum urna ut facilisis rhoncus.iaculis sed
-                                                    orci eget semper. Nam auctor, augue et eleifend tincidunt, felis
-                                                    mauris</p>
+                                                <?php
+                                                        include('config.php');
+                                                       
+                                                       
+                                                        $query123 = "SELECT * FROM nbook where new_id=$ii";
+                                                        $query_run123 = mysqli_query($connection,$query123);
+                                                        if(mysqli_num_rows($query_run123) > 0)        
+                                                        {
+                                                            while($row123 = mysqli_fetch_assoc($query_run123))
+                                                            {
+                                                                
+                                                            ?>
+                                                   <p class="text-muted h5"><?php  echo $row123['description'];?></p>
+                                                   
+                                              <?php }}?>
                                         </div>
                                     </div>
 
@@ -102,19 +111,21 @@
                                                     
                                                     <div class="form__group mb--30 mb-sm--20">
                                                         <div class="form-row">
+                                                              
                                                             <div class="col-sm-6 mb-sm--20">
                                                                 <label class="form__label" for="name">Name<span
                                                                         class="required">*</span></label>
                                                                 <input type="hidden" name="pid" value="<?php echo $ii;?>">
                                                                 <input type="text" name="name" id="name" 
-                                                                    class="form__input">
+                                                                    class="form__input" >
                                                             </div>
                                                             <div class="col-sm-6">
                                                                 <label class="form__label" for="email">email<span
                                                                         class="required">*</span></label>
-                                                                <input type="email" name="email" id="email"
+                                                                <input type="email" name="email" id="email" 
                                                                     class="form__input">
                                                             </div>
+                                                         
                                                         </div>
                                                     </div>
                                                     <div class="form__group mb--30 mb-sm--20">
