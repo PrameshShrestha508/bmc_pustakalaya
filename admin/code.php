@@ -27,8 +27,8 @@ $username = mysqli_real_escape_string($connection, $_POST['uname']);
     }
     else
     {
-        $query = "INSERT INTO users (name, email,phone,address,password,usertype) 
-  			  VALUES('$username', '$email','$phone','$address','$password','$usertype')";
+        $query = "INSERT INTO users(name,email,phone,address,password,usertype) 
+  			  VALUES('$username','$email','$phone','$address','$password','$usertype')";
   	        $result=mysqli_query($connection, $query);
 
             if($result)

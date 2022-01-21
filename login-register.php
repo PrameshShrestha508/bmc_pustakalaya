@@ -42,7 +42,8 @@ include('includes/header.php');
                                 $email = mysqli_real_escape_string($connection,$_POST['email']);
                                 $password = mysqli_real_escape_string($connection,$_POST['password']);
                                 $Failed="Login Error- Please Try Again!!!";
-
+                                $nameErr=$emailErr=$phoneErr=$addressErr=$passwordErr="";
+                                
                                     $query = "SELECT * FROM users WHERE name='$username' AND password='$password'";
                                     $results = mysqli_query($connection, $query);
                                     if (mysqli_num_rows($results) == 1) 
@@ -95,7 +96,7 @@ include('includes/header.php');
                                 // initializing variables
                                 $errors = array(); 
                                 // REGISTER USER
-                                if (isset($_POST['rsubmit'])) {
+                            if (isset($_POST['rsubmit'])) {
                                 // receive all input values from the form
                                 $username = mysqli_real_escape_string($connection, $_POST['uname']);
                                 $email = mysqli_real_escape_string($connection, $_POST['email']);
@@ -122,7 +123,7 @@ include('includes/header.php');
                                     }
                                    
                                     
-                                    else if ($user) { // if user exists
+                                   if ($user) { // if user exists
                                         if ($user['name'] === $username) {
                                             $nameErr= "Username already exists";
                                         }
@@ -131,31 +132,31 @@ include('includes/header.php');
                                             $emailErr= "Email already exists";
                                         }
                                     }
-                                    else if (!preg_match('/^[A-Za-z][A-Za-z0-9]{4,31}$/', $username) ){
-                                        $nameErr="Name should contain only letter and shouldn't contain space";
-                                    }
-                                    else if($email==""){
+                                     if (!preg_match("/^[a-zA-Z-' ]*$/",$username)) {
+                                        $nameErr = "Only letters and white space allowed";
+                                      }
+                                     if($email==""){
                                         $emailErr= "Email cant be empty";
                                     }
                                 //     else if(filter_var($email, FILTER_VALIDATE_EMAIL)) {
                                 //         $emailErr= "Email must be in valid format";
                                 //    }
-                                    else if(!preg_match('/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/', $email)){
+                                     if(!preg_match('/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/', $email)){
                                              $emailErr= "Email must be in valid format";
                                      }
-                                    else if(!preg_match("/^[0-9]{10}$/", $phone)){
+                                     if(!preg_match("/^[0-9]{10}$/", $phone)){
                                         $phoneErr= "Phone number should be in digits and must be  10 digits";
                                     }
-                                    else if($phone==""){
+                                     if($phone==""){
                                         $phoneErr= "Phone cant be empty";
                                     }
-                                    else if($address==""){
+                                     if($address==""){
                                         $addressErr= "Address cant be empty";
                                     }
-                                    else if($password==""){
+                                     if($password==""){
                                         $passwordErr= "Password cant be empty";
                                     }
-                                    else if(strlen($password)<6){
+                                     if(strlen($password)<6){
                                         $passwordErr= "Password must be greater  than 6 digits";
                                     }
 
@@ -174,7 +175,7 @@ include('includes/header.php');
                                     }
                                 }
 
-                                }
+                             }
                                 ?>
                                  
                                 <h4 class="mb--35 mb-sm--20">Register</h4>

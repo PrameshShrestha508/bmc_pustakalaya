@@ -14,6 +14,8 @@ include('includes/header.php');?>
 include('config.php');
 if(isset($_POST['submit']))
 {
+    $nameErr=$emailErr=$phoneErr=$addressErr="";
+
 	$order_no='ord'.rand(100,500);
 	$name = $_POST['name'];
     $email = $_POST['email'];
@@ -27,13 +29,28 @@ if(isset($_POST['submit']))
 	$paymentMethod = $_POST['paymentMethod'];
     $status = $_POST['status'];
 
+if($email==""){
+        $emailErr= "Email cant be empty";
+    }
+    else if(!preg_match('/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/', $email)){
+        $emailErr= "Email must be in valid format";
+    }
+    else if(!preg_match("/^[0-9]{10}$/", $phone)){
+        $phoneErr= "Phone number should be in digits and must be  10 digits";
+    }
+    else if($phone==""){
+        $phoneErr= "Phone cant be empty";
+    }
+    if($address==""){
+        $addressErr= "Address cant be empty";
+    }
 
 
 
 	
-	$query1 = "INSERT INTO orders(order_no,name,email,phone,address,bookname,price,qty,Sem,date,paymentMethod,status) VALUES ('$order_no','$name','$email','$phone','$address','$bname','$price','$qty','$sem','$date','$paymentMethod','$status')";
+	else{
+        $query1 = "INSERT INTO orders(order_no,name,email,phone,address,bookname,price,qty,Sem,date,paymentMethod,status) VALUES ('$order_no','$name','$email','$phone','$address','$bname','$price','$qty','$sem','$date','$paymentMethod','$status')";
             $query_run1 = mysqli_query($connection, $query1);
-			
 			
 			if($query_run1){
 				echo "<script>window.location.href='thankyou.php';</script>";
@@ -41,6 +58,7 @@ if(isset($_POST['submit']))
 			}else{
 				mysqli_error($connection);
 			}
+        }
 
 
 
@@ -111,6 +129,7 @@ if(isset($_POST['submit']))
                                                 <span class="required">*</span></label>
                                             <input type="email" name="email" id="billing_email"
                                                 class="form__input form__input--2">
+                                                <span class="text-danger"><?php echo $emailErr;?></span>
                                         </div>
                                     </div>
                                    
@@ -121,6 +140,7 @@ if(isset($_POST['submit']))
                                                     class="required">*</span></label>
                                             <input type="text" name="phone" id="billing_phone"
                                                 class="form__input form__input--2">
+                                                <span class="text-danger"><?php echo $phoneErr;?></span>
                                         </div>
                                     </div>
                                     <div class="form-row mb--30">
@@ -129,6 +149,7 @@ if(isset($_POST['submit']))
                                                     class="required">*</span></label>
                                             <input type="text" name="address" id="billing_address"
                                                 class="form__input form__input--2">
+                                                <span class="text-danger"><?php echo $addressErr;?></span>
                                         </div>
                                     </div>
                                     <div class="form-row mb--30">
