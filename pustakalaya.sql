@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.0
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 21, 2022 at 09:37 AM
--- Server version: 10.4.18-MariaDB
--- PHP Version: 8.0.3
+-- Generation Time: Feb 06, 2022 at 02:22 PM
+-- Server version: 10.4.22-MariaDB
+-- PHP Version: 8.1.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -274,11 +274,11 @@ CREATE TABLE `ratting` (
 --
 
 INSERT INTO `ratting` (`id`, `name`, `email`, `ratting`, `review`, `date`, `pid`) VALUES
-(11, 'Pramesh Shrestha', 'pramesh@gmail.com', 1, 'too lengthy and tough', '2021-12-09', 11),
+(11, 'pramesh shrestha', 'pramesh@gmail.com', 1, 'too lengthy and tough', '2021-12-09', 11),
 (12, 'Ram bahadur', 'ram@gmail.com', 3, 'good;)', '2021-12-09', 11),
-(13, 'Pramesh Shrestha', 'pramesh@gmail.com', 4, 'Amazing book', '2021-12-09', 7),
+(13, 'pramesh shrestha', 'pramesh@gmail.com', 4, 'Amazing book', '2021-12-09', 7),
 (14, 'Pramesh Shrestha', 'pramesh@gmail.com', 5, 'fantastic', '2021-12-09', 8),
-(15, 'Madhu Khadka', 'madhu@gmail.com', 3, 'i loved it', '2021-12-09', 8),
+(15, 'madhu khadka', 'madhu@gmail.com', 3, 'i loved it', '2021-12-09', 8),
 (16, 'Pramesh Shrestha', 'pramesh@gmail.com', 1, 'Not so useful', '2021-12-09', 9);
 
 -- --------------------------------------------------------
